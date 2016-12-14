@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FifaRanking", "..\..\WebSites\FifaRanking", "{72D03FE6-3956-45BD-AF6D-BBD54641718D}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{a779bd87-2934-4fdf-993c-b2d3231ac60a}|Parser.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53175"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\FifaRanking\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53175\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53175"
+		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\FifaRanking\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53175\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53175"
+		SlnRelativePath = "..\..\WebSites\FifaRanking\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csproj", "{A779BD87-2934-4FDF-993C-B2D3231AC60A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72D03FE6-3956-45BD-AF6D-BBD54641718D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D03FE6-3956-45BD-AF6D-BBD54641718D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D03FE6-3956-45BD-AF6D-BBD54641718D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D03FE6-3956-45BD-AF6D-BBD54641718D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{A779BD87-2934-4FDF-993C-B2D3231AC60A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A779BD87-2934-4FDF-993C-B2D3231AC60A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A779BD87-2934-4FDF-993C-B2D3231AC60A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A779BD87-2934-4FDF-993C-B2D3231AC60A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
