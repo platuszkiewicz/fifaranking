@@ -1,0 +1,906 @@
+[
+  {
+    "Rank": 199,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 0,
+    "MovePosition": 0,
+    "Date": "2007-06-13T00:00:00",
+    "RankId": 156
+  },
+  {
+    "Rank": 199,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 0,
+    "MovePosition": 0,
+    "Date": "2007-07-18T00:00:00",
+    "RankId": 157
+  },
+  {
+    "Rank": 199,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 0,
+    "MovePosition": 0,
+    "Date": "2007-08-22T00:00:00",
+    "RankId": 158
+  },
+  {
+    "Rank": 186,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 0,
+    "MovePosition": 13,
+    "Date": "2007-09-19T00:00:00",
+    "RankId": 159
+  },
+  {
+    "Rank": 171,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 21,
+    "MovePosition": 15,
+    "Date": "2007-10-24T00:00:00",
+    "RankId": 160
+  },
+  {
+    "Rank": 172,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 65,
+    "MovePosition": -1,
+    "Date": "2007-11-23T00:00:00",
+    "RankId": 161
+  },
+  {
+    "Rank": 172,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 65,
+    "MovePosition": 0,
+    "Date": "2007-12-17T00:00:00",
+    "RankId": 162
+  },
+  {
+    "Rank": 172,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 65,
+    "MovePosition": 0,
+    "Date": "2008-01-16T00:00:00",
+    "RankId": 163
+  },
+  {
+    "Rank": 175,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 65,
+    "MovePosition": -3,
+    "Date": "2008-02-13T00:00:00",
+    "RankId": 164
+  },
+  {
+    "Rank": 175,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 65,
+    "MovePosition": 0,
+    "Date": "2008-03-12T00:00:00",
+    "RankId": 165
+  },
+  {
+    "Rank": 153,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 65,
+    "MovePosition": 22,
+    "Date": "2008-04-09T00:00:00",
+    "RankId": 166
+  },
+  {
+    "Rank": 150,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 141,
+    "MovePosition": 3,
+    "Date": "2008-05-07T00:00:00",
+    "RankId": 167
+  },
+  {
+    "Rank": 142,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 141,
+    "MovePosition": 8,
+    "Date": "2008-06-04T00:00:00",
+    "RankId": 168
+  },
+  {
+    "Rank": 146,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 180,
+    "MovePosition": -4,
+    "Date": "2008-07-02T00:00:00",
+    "RankId": 169
+  },
+  {
+    "Rank": 143,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 180,
+    "MovePosition": 3,
+    "Date": "2008-08-06T00:00:00",
+    "RankId": 170
+  },
+  {
+    "Rank": 136,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 180,
+    "MovePosition": 7,
+    "Date": "2008-09-03T00:00:00",
+    "RankId": 171
+  },
+  {
+    "Rank": 117,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 198,
+    "MovePosition": 19,
+    "Date": "2008-10-08T00:00:00",
+    "RankId": 172
+  },
+  {
+    "Rank": 115,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 294,
+    "MovePosition": 2,
+    "Date": "2008-11-12T00:00:00",
+    "RankId": 173
+  },
+  {
+    "Rank": 112,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 285,
+    "MovePosition": 3,
+    "Date": "2008-12-17T00:00:00",
+    "RankId": 174
+  },
+  {
+    "Rank": 113,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 310,
+    "MovePosition": -1,
+    "Date": "2009-01-14T00:00:00",
+    "RankId": 175
+  },
+  {
+    "Rank": 111,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 310,
+    "MovePosition": 2,
+    "Date": "2009-02-11T00:00:00",
+    "RankId": 176
+  },
+  {
+    "Rank": 112,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 310,
+    "MovePosition": -1,
+    "Date": "2009-03-11T00:00:00",
+    "RankId": 177
+  },
+  {
+    "Rank": 117,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 310,
+    "MovePosition": -5,
+    "Date": "2009-04-08T00:00:00",
+    "RankId": 178
+  },
+  {
+    "Rank": 117,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 284,
+    "MovePosition": 0,
+    "Date": "2009-05-06T00:00:00",
+    "RankId": 179
+  },
+  {
+    "Rank": 110,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 284,
+    "MovePosition": 7,
+    "Date": "2009-06-03T00:00:00",
+    "RankId": 180
+  },
+  {
+    "Rank": 98,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 331,
+    "MovePosition": 12,
+    "Date": "2009-07-01T00:00:00",
+    "RankId": 181
+  },
+  {
+    "Rank": 96,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 339,
+    "MovePosition": 2,
+    "Date": "2009-08-05T00:00:00",
+    "RankId": 182
+  },
+  {
+    "Rank": 89,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 339,
+    "MovePosition": 7,
+    "Date": "2009-09-02T00:00:00",
+    "RankId": 183
+  },
+  {
+    "Rank": 75,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 380,
+    "MovePosition": 14,
+    "Date": "2009-10-16T00:00:00",
+    "RankId": 184
+  },
+  {
+    "Rank": 73,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 436,
+    "MovePosition": 2,
+    "Date": "2009-11-20T00:00:00",
+    "RankId": 185
+  },
+  {
+    "Rank": 74,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 456,
+    "MovePosition": -1,
+    "Date": "2009-12-16T00:00:00",
+    "RankId": 186
+  },
+  {
+    "Rank": 72,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 456,
+    "MovePosition": 2,
+    "Date": "2010-02-03T00:00:00",
+    "RankId": 187
+  },
+  {
+    "Rank": 71,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 456,
+    "MovePosition": 1,
+    "Date": "2010-03-03T00:00:00",
+    "RankId": 188
+  },
+  {
+    "Rank": 69,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 456,
+    "MovePosition": 2,
+    "Date": "2010-03-31T00:00:00",
+    "RankId": 189
+  },
+  {
+    "Rank": 65,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 484,
+    "MovePosition": 4,
+    "Date": "2010-04-28T00:00:00",
+    "RankId": 190
+  },
+  {
+    "Rank": 64,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 500,
+    "MovePosition": 1,
+    "Date": "2010-05-26T00:00:00",
+    "RankId": 191
+  },
+  {
+    "Rank": 72,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 500,
+    "MovePosition": -8,
+    "Date": "2010-07-14T00:00:00",
+    "RankId": 192
+  },
+  {
+    "Rank": 73,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 448,
+    "MovePosition": -1,
+    "Date": "2010-08-11T00:00:00",
+    "RankId": 193
+  },
+  {
+    "Rank": 40,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 448,
+    "MovePosition": 33,
+    "Date": "2010-09-15T00:00:00",
+    "RankId": 194
+  },
+  {
+    "Rank": 26,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 684,
+    "MovePosition": 14,
+    "Date": "2010-10-20T00:00:00",
+    "RankId": 195
+  },
+  {
+    "Rank": 26,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 827,
+    "MovePosition": 0,
+    "Date": "2010-11-17T00:00:00",
+    "RankId": 196
+  },
+  {
+    "Rank": 25,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 827,
+    "MovePosition": 1,
+    "Date": "2010-12-15T00:00:00",
+    "RankId": 197
+  },
+  {
+    "Rank": 25,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 824,
+    "MovePosition": 0,
+    "Date": "2011-01-12T00:00:00",
+    "RankId": 198
+  },
+  {
+    "Rank": 25,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 824,
+    "MovePosition": 0,
+    "Date": "2011-02-02T00:00:00",
+    "RankId": 199
+  },
+  {
+    "Rank": 25,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 824,
+    "MovePosition": 0,
+    "Date": "2011-03-09T00:00:00",
+    "RankId": 200
+  },
+  {
+    "Rank": 24,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 824,
+    "MovePosition": 1,
+    "Date": "2011-04-13T00:00:00",
+    "RankId": 201
+  },
+  {
+    "Rank": 24,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 820,
+    "MovePosition": 0,
+    "Date": "2011-05-18T00:00:00",
+    "RankId": 202
+  },
+  {
+    "Rank": 16,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 820,
+    "MovePosition": 8,
+    "Date": "2011-06-29T00:00:00",
+    "RankId": 203
+  },
+  {
+    "Rank": 17,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 915,
+    "MovePosition": -1,
+    "Date": "2011-07-27T00:00:00",
+    "RankId": 204
+  },
+  {
+    "Rank": 19,
+    "TotalPoints": 874.67,
+    "PreviousPoints": 915,
+    "MovePosition": -2,
+    "Date": "2011-08-24T00:00:00",
+    "RankId": 205
+  },
+  {
+    "Rank": 26,
+    "TotalPoints": 777.45,
+    "PreviousPoints": 875,
+    "MovePosition": -7,
+    "Date": "2011-09-21T00:00:00",
+    "RankId": 206
+  },
+  {
+    "Rank": 39,
+    "TotalPoints": 654.82,
+    "PreviousPoints": 777,
+    "MovePosition": -13,
+    "Date": "2011-10-19T00:00:00",
+    "RankId": 207
+  },
+  {
+    "Rank": 51,
+    "TotalPoints": 585.48,
+    "PreviousPoints": 655,
+    "MovePosition": -12,
+    "Date": "2011-11-23T00:00:00",
+    "RankId": 208
+  },
+  {
+    "Rank": 51,
+    "TotalPoints": 585.48,
+    "PreviousPoints": 585,
+    "MovePosition": 0,
+    "Date": "2011-12-21T00:00:00",
+    "RankId": 209
+  },
+  {
+    "Rank": 50,
+    "TotalPoints": 585.48,
+    "PreviousPoints": 585,
+    "MovePosition": 1,
+    "Date": "2012-01-18T00:00:00",
+    "RankId": 210
+  },
+  {
+    "Rank": 51,
+    "TotalPoints": 585.48,
+    "PreviousPoints": 585,
+    "MovePosition": -1,
+    "Date": "2012-02-15T00:00:00",
+    "RankId": 211
+  },
+  {
+    "Rank": 44,
+    "TotalPoints": 600.99,
+    "PreviousPoints": 585,
+    "MovePosition": 7,
+    "Date": "2012-03-07T00:00:00",
+    "RankId": 212
+  },
+  {
+    "Rank": 54,
+    "TotalPoints": 568.92,
+    "PreviousPoints": 601,
+    "MovePosition": -10,
+    "Date": "2012-04-11T00:00:00",
+    "RankId": 213
+  },
+  {
+    "Rank": 55,
+    "TotalPoints": 568.92,
+    "PreviousPoints": 569,
+    "MovePosition": -1,
+    "Date": "2012-05-09T00:00:00",
+    "RankId": 214
+  },
+  {
+    "Rank": 50,
+    "TotalPoints": 581.46,
+    "PreviousPoints": 569,
+    "MovePosition": 5,
+    "Date": "2012-06-06T00:00:00",
+    "RankId": 215
+  },
+  {
+    "Rank": 50,
+    "TotalPoints": 581.46,
+    "PreviousPoints": 581,
+    "MovePosition": 0,
+    "Date": "2012-07-04T00:00:00",
+    "RankId": 216
+  },
+  {
+    "Rank": 50,
+    "TotalPoints": 581.46,
+    "PreviousPoints": 581,
+    "MovePosition": 0,
+    "Date": "2012-08-08T00:00:00",
+    "RankId": 217
+  },
+  {
+    "Rank": 48,
+    "TotalPoints": 606.42,
+    "PreviousPoints": 581,
+    "MovePosition": 2,
+    "Date": "2012-09-05T00:00:00",
+    "RankId": 218
+  },
+  {
+    "Rank": 44,
+    "TotalPoints": 623.37,
+    "PreviousPoints": 606,
+    "MovePosition": 4,
+    "Date": "2012-10-03T00:00:00",
+    "RankId": 219
+  },
+  {
+    "Rank": 34,
+    "TotalPoints": 691.32,
+    "PreviousPoints": 623,
+    "MovePosition": 10,
+    "Date": "2012-11-07T00:00:00",
+    "RankId": 220
+  },
+  {
+    "Rank": 31,
+    "TotalPoints": 756.23,
+    "PreviousPoints": 691,
+    "MovePosition": 3,
+    "Date": "2012-12-19T00:00:00",
+    "RankId": 221
+  },
+  {
+    "Rank": 31,
+    "TotalPoints": 756.23,
+    "PreviousPoints": 756,
+    "MovePosition": 0,
+    "Date": "2013-01-17T00:00:00",
+    "RankId": 222
+  },
+  {
+    "Rank": 29,
+    "TotalPoints": 756.23,
+    "PreviousPoints": 756,
+    "MovePosition": 2,
+    "Date": "2013-02-14T00:00:00",
+    "RankId": 223
+  },
+  {
+    "Rank": 28,
+    "TotalPoints": 790.05,
+    "PreviousPoints": 756,
+    "MovePosition": 1,
+    "Date": "2013-03-14T00:00:00",
+    "RankId": 224
+  },
+  {
+    "Rank": 27,
+    "TotalPoints": 789.32,
+    "PreviousPoints": 790,
+    "MovePosition": 1,
+    "Date": "2013-04-11T00:00:00",
+    "RankId": 225
+  },
+  {
+    "Rank": 27,
+    "TotalPoints": 789.32,
+    "PreviousPoints": 789,
+    "MovePosition": 0,
+    "Date": "2013-05-09T00:00:00",
+    "RankId": 226
+  },
+  {
+    "Rank": 25,
+    "TotalPoints": 841.01,
+    "PreviousPoints": 789,
+    "MovePosition": 2,
+    "Date": "2013-06-06T00:00:00",
+    "RankId": 227
+  },
+  {
+    "Rank": 28,
+    "TotalPoints": 774.34,
+    "PreviousPoints": 841,
+    "MovePosition": -3,
+    "Date": "2013-07-04T00:00:00",
+    "RankId": 228
+  },
+  {
+    "Rank": 28,
+    "TotalPoints": 774.34,
+    "PreviousPoints": 774,
+    "MovePosition": 0,
+    "Date": "2013-08-08T00:00:00",
+    "RankId": 229
+  },
+  {
+    "Rank": 27,
+    "TotalPoints": 766.35,
+    "PreviousPoints": 774,
+    "MovePosition": 1,
+    "Date": "2013-09-12T00:00:00",
+    "RankId": 230
+  },
+  {
+    "Rank": 54,
+    "TotalPoints": 584.02,
+    "PreviousPoints": 766,
+    "MovePosition": -27,
+    "Date": "2013-10-17T00:00:00",
+    "RankId": 231
+  },
+  {
+    "Rank": 53,
+    "TotalPoints": 594.01,
+    "PreviousPoints": 584,
+    "MovePosition": 1,
+    "Date": "2013-11-28T00:00:00",
+    "RankId": 232
+  },
+  {
+    "Rank": 52,
+    "TotalPoints": 594.01,
+    "PreviousPoints": 594,
+    "MovePosition": 1,
+    "Date": "2013-12-19T00:00:00",
+    "RankId": 233
+  },
+  {
+    "Rank": 52,
+    "TotalPoints": 594.01,
+    "PreviousPoints": 594,
+    "MovePosition": 0,
+    "Date": "2014-01-16T00:00:00",
+    "RankId": 234
+  },
+  {
+    "Rank": 52,
+    "TotalPoints": 594.01,
+    "PreviousPoints": 594,
+    "MovePosition": 0,
+    "Date": "2014-02-13T00:00:00",
+    "RankId": 235
+  },
+  {
+    "Rank": 46,
+    "TotalPoints": 638.99,
+    "PreviousPoints": 594,
+    "MovePosition": 6,
+    "Date": "2014-03-13T00:00:00",
+    "RankId": 236
+  },
+  {
+    "Rank": 54,
+    "TotalPoints": 554.52,
+    "PreviousPoints": 639,
+    "MovePosition": -8,
+    "Date": "2014-04-10T00:00:00",
+    "RankId": 237
+  },
+  {
+    "Rank": 54,
+    "TotalPoints": 554.52,
+    "PreviousPoints": 555,
+    "MovePosition": 0,
+    "Date": "2014-05-08T00:00:00",
+    "RankId": 238
+  },
+  {
+    "Rank": 51,
+    "TotalPoints": 573.86,
+    "PreviousPoints": 555,
+    "MovePosition": 3,
+    "Date": "2014-06-05T00:00:00",
+    "RankId": 239
+  },
+  {
+    "Rank": 50,
+    "TotalPoints": 558.56,
+    "PreviousPoints": 574,
+    "MovePosition": 1,
+    "Date": "2014-07-17T00:00:00",
+    "RankId": 240
+  },
+  {
+    "Rank": 49,
+    "TotalPoints": 552.95,
+    "PreviousPoints": 559,
+    "MovePosition": 1,
+    "Date": "2014-08-14T00:00:00",
+    "RankId": 241
+  },
+  {
+    "Rank": 43,
+    "TotalPoints": 591.29,
+    "PreviousPoints": 553,
+    "MovePosition": 6,
+    "Date": "2014-09-18T00:00:00",
+    "RankId": 242
+  },
+  {
+    "Rank": 64,
+    "TotalPoints": 504.48,
+    "PreviousPoints": 591,
+    "MovePosition": -21,
+    "Date": "2014-10-23T00:00:00",
+    "RankId": 243
+  },
+  {
+    "Rank": 58,
+    "TotalPoints": 537.45,
+    "PreviousPoints": 504,
+    "MovePosition": 6,
+    "Date": "2014-11-27T00:00:00",
+    "RankId": 244
+  },
+  {
+    "Rank": 59,
+    "TotalPoints": 537.45,
+    "PreviousPoints": 537,
+    "MovePosition": -1,
+    "Date": "2014-12-18T00:00:00",
+    "RankId": 245
+  },
+  {
+    "Rank": 59,
+    "TotalPoints": 537.45,
+    "PreviousPoints": 537,
+    "MovePosition": 0,
+    "Date": "2015-01-08T00:00:00",
+    "RankId": 246
+  },
+  {
+    "Rank": 65,
+    "TotalPoints": 537.45,
+    "PreviousPoints": 537,
+    "MovePosition": -6,
+    "Date": "2015-02-12T00:00:00",
+    "RankId": 247
+  },
+  {
+    "Rank": 67,
+    "TotalPoints": 530.95,
+    "PreviousPoints": 537,
+    "MovePosition": -2,
+    "Date": "2015-03-12T00:00:00",
+    "RankId": 248
+  },
+  {
+    "Rank": 70,
+    "TotalPoints": 490.56,
+    "PreviousPoints": 531,
+    "MovePosition": -3,
+    "Date": "2015-04-09T00:00:00",
+    "RankId": 249
+  },
+  {
+    "Rank": 75,
+    "TotalPoints": 456.67,
+    "PreviousPoints": 491,
+    "MovePosition": -5,
+    "Date": "2015-05-07T00:00:00",
+    "RankId": 250
+  },
+  {
+    "Rank": 70,
+    "TotalPoints": 512.52,
+    "PreviousPoints": 457,
+    "MovePosition": 5,
+    "Date": "2015-06-04T00:00:00",
+    "RankId": 251
+  },
+  {
+    "Rank": 81,
+    "TotalPoints": 422.9,
+    "PreviousPoints": 513,
+    "MovePosition": -11,
+    "Date": "2015-07-09T00:00:00",
+    "RankId": 252
+  },
+  {
+    "Rank": 77,
+    "TotalPoints": 422.9,
+    "PreviousPoints": 423,
+    "MovePosition": 4,
+    "Date": "2015-08-06T00:00:00",
+    "RankId": 253
+  },
+  {
+    "Rank": 77,
+    "TotalPoints": 429.78,
+    "PreviousPoints": 423,
+    "MovePosition": 0,
+    "Date": "2015-09-03T00:00:00",
+    "RankId": 254
+  },
+  {
+    "Rank": 72,
+    "TotalPoints": 469.54,
+    "PreviousPoints": 430,
+    "MovePosition": 5,
+    "Date": "2015-10-01T00:00:00",
+    "RankId": 255
+  },
+  {
+    "Rank": 78,
+    "TotalPoints": 425.64,
+    "PreviousPoints": 470,
+    "MovePosition": -6,
+    "Date": "2015-11-05T00:00:00",
+    "RankId": 256
+  },
+  {
+    "Rank": 85,
+    "TotalPoints": 403.36,
+    "PreviousPoints": 426,
+    "MovePosition": -7,
+    "Date": "2015-12-03T00:00:00",
+    "RankId": 257
+  },
+  {
+    "Rank": 85,
+    "TotalPoints": 403.36,
+    "PreviousPoints": 403,
+    "MovePosition": 0,
+    "Date": "2016-01-07T00:00:00",
+    "RankId": 258
+  },
+  {
+    "Rank": 84,
+    "TotalPoints": 403.36,
+    "PreviousPoints": 403,
+    "MovePosition": 1,
+    "Date": "2016-02-04T00:00:00",
+    "RankId": 259
+  },
+  {
+    "Rank": 84,
+    "TotalPoints": 408.58,
+    "PreviousPoints": 403,
+    "MovePosition": 0,
+    "Date": "2016-03-03T00:00:00",
+    "RankId": 260
+  },
+  {
+    "Rank": 94,
+    "TotalPoints": 364.85,
+    "PreviousPoints": 409,
+    "MovePosition": -10,
+    "Date": "2016-04-07T00:00:00",
+    "RankId": 261
+  },
+  {
+    "Rank": 94,
+    "TotalPoints": 364.85,
+    "PreviousPoints": 365,
+    "MovePosition": 0,
+    "Date": "2016-05-05T00:00:00",
+    "RankId": 262
+  },
+  {
+    "Rank": 90,
+    "TotalPoints": 382.15,
+    "PreviousPoints": 365,
+    "MovePosition": 4,
+    "Date": "2016-06-02T00:00:00",
+    "RankId": 263
+  },
+  {
+    "Rank": 95,
+    "TotalPoints": 364.67,
+    "PreviousPoints": 382,
+    "MovePosition": -5,
+    "Date": "2016-07-14T00:00:00",
+    "RankId": 264
+  },
+  {
+    "Rank": 95,
+    "TotalPoints": 364.67,
+    "PreviousPoints": 365,
+    "MovePosition": 0,
+    "Date": "2016-08-11T00:00:00",
+    "RankId": 265
+  },
+  {
+    "Rank": 105,
+    "TotalPoints": 325.86,
+    "PreviousPoints": 365,
+    "MovePosition": -10,
+    "Date": "2016-09-15T00:00:00",
+    "RankId": 266
+  },
+  {
+    "Rank": 56,
+    "TotalPoints": 570.49,
+    "PreviousPoints": 326,
+    "MovePosition": 49,
+    "Date": "2016-10-20T00:00:00",
+    "RankId": 267
+  },
+  {
+    "Rank": 63,
+    "TotalPoints": 549.38,
+    "PreviousPoints": 570,
+    "MovePosition": -7,
+    "Date": "2016-11-24T00:00:00",
+    "RankId": 268
+  }
+]

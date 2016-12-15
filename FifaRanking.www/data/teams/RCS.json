@@ -1,0 +1,50 @@
+[
+  {
+    "Rank": 18,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 0,
+    "MovePosition": 0,
+    "Date": "1992-12-01T00:00:00",
+    "RankId": 1
+  },
+  {
+    "Rank": 15,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 47,
+    "MovePosition": 3,
+    "Date": "1993-08-08T00:00:00",
+    "RankId": 2
+  },
+  {
+    "Rank": 17,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 50,
+    "MovePosition": -2,
+    "Date": "1993-09-23T00:00:00",
+    "RankId": 3
+  },
+  {
+    "Rank": 21,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 50,
+    "MovePosition": -4,
+    "Date": "1993-10-22T00:00:00",
+    "RankId": 4
+  },
+  {
+    "Rank": 19,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 47,
+    "MovePosition": 2,
+    "Date": "1993-11-19T00:00:00",
+    "RankId": 5
+  },
+  {
+    "Rank": 19,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 49,
+    "MovePosition": 0,
+    "Date": "1993-12-23T00:00:00",
+    "RankId": 6
+  }
+]

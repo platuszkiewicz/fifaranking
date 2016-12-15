@@ -1,0 +1,818 @@
+[
+  {
+    "Rank": 29,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 0,
+    "MovePosition": 0,
+    "Date": "1992-12-01T00:00:00",
+    "RankId": 1
+  },
+  {
+    "Rank": 56,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 39,
+    "MovePosition": -27,
+    "Date": "1993-08-08T00:00:00",
+    "RankId": 2
+  },
+  {
+    "Rank": 62,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 31,
+    "MovePosition": -6,
+    "Date": "1993-09-23T00:00:00",
+    "RankId": 3
+  },
+  {
+    "Rank": 65,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 29,
+    "MovePosition": -3,
+    "Date": "1993-10-22T00:00:00",
+    "RankId": 4
+  },
+  {
+    "Rank": 67,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 28,
+    "MovePosition": -2,
+    "Date": "1993-11-19T00:00:00",
+    "RankId": 5
+  },
+  {
+    "Rank": 68,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 27,
+    "MovePosition": -1,
+    "Date": "1993-12-23T00:00:00",
+    "RankId": 6
+  },
+  {
+    "Rank": 70,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 26,
+    "MovePosition": -2,
+    "Date": "1994-02-15T00:00:00",
+    "RankId": 7
+  },
+  {
+    "Rank": 74,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 24,
+    "MovePosition": -4,
+    "Date": "1994-03-15T00:00:00",
+    "RankId": 8
+  },
+  {
+    "Rank": 74,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 24,
+    "MovePosition": 0,
+    "Date": "1994-04-19T00:00:00",
+    "RankId": 9
+  },
+  {
+    "Rank": 75,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 22,
+    "MovePosition": -1,
+    "Date": "1994-05-17T00:00:00",
+    "RankId": 10
+  },
+  {
+    "Rank": 78,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 22,
+    "MovePosition": -3,
+    "Date": "1994-06-14T00:00:00",
+    "RankId": 11
+  },
+  {
+    "Rank": 78,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 21,
+    "MovePosition": 0,
+    "Date": "1994-07-21T00:00:00",
+    "RankId": 12
+  },
+  {
+    "Rank": 83,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 20,
+    "MovePosition": -5,
+    "Date": "1994-09-13T00:00:00",
+    "RankId": 13
+  },
+  {
+    "Rank": 92,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 18,
+    "MovePosition": -9,
+    "Date": "1994-10-25T00:00:00",
+    "RankId": 14
+  },
+  {
+    "Rank": 96,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 17,
+    "MovePosition": -4,
+    "Date": "1994-11-22T00:00:00",
+    "RankId": 15
+  },
+  {
+    "Rank": 101,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 16,
+    "MovePosition": -5,
+    "Date": "1994-12-20T00:00:00",
+    "RankId": 16
+  },
+  {
+    "Rank": 87,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 14,
+    "MovePosition": 14,
+    "Date": "1995-02-20T00:00:00",
+    "RankId": 17
+  },
+  {
+    "Rank": 83,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 21,
+    "MovePosition": 4,
+    "Date": "1995-04-19T00:00:00",
+    "RankId": 18
+  },
+  {
+    "Rank": 85,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 23,
+    "MovePosition": -2,
+    "Date": "1995-05-16T00:00:00",
+    "RankId": 19
+  },
+  {
+    "Rank": 86,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 22,
+    "MovePosition": -1,
+    "Date": "1995-06-13T00:00:00",
+    "RankId": 20
+  },
+  {
+    "Rank": 89,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 23,
+    "MovePosition": -3,
+    "Date": "1995-07-25T00:00:00",
+    "RankId": 21
+  },
+  {
+    "Rank": 92,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 22,
+    "MovePosition": -3,
+    "Date": "1995-08-22T00:00:00",
+    "RankId": 22
+  },
+  {
+    "Rank": 83,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 21,
+    "MovePosition": 9,
+    "Date": "1995-09-19T00:00:00",
+    "RankId": 23
+  },
+  {
+    "Rank": 93,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 18,
+    "MovePosition": -10,
+    "Date": "1995-10-17T00:00:00",
+    "RankId": 24
+  },
+  {
+    "Rank": 80,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 21,
+    "MovePosition": 13,
+    "Date": "1995-11-21T00:00:00",
+    "RankId": 25
+  },
+  {
+    "Rank": 81,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 25,
+    "MovePosition": -1,
+    "Date": "1995-12-19T00:00:00",
+    "RankId": 26
+  },
+  {
+    "Rank": 81,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 26,
+    "MovePosition": 0,
+    "Date": "1996-01-24T00:00:00",
+    "RankId": 27
+  },
+  {
+    "Rank": 83,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 26,
+    "MovePosition": -2,
+    "Date": "1996-02-21T00:00:00",
+    "RankId": 28
+  },
+  {
+    "Rank": 81,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 24,
+    "MovePosition": 2,
+    "Date": "1996-04-24T00:00:00",
+    "RankId": 29
+  },
+  {
+    "Rank": 73,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 26,
+    "MovePosition": 8,
+    "Date": "1996-05-22T00:00:00",
+    "RankId": 30
+  },
+  {
+    "Rank": 62,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 29,
+    "MovePosition": 11,
+    "Date": "1996-07-03T00:00:00",
+    "RankId": 31
+  },
+  {
+    "Rank": 65,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 35,
+    "MovePosition": -3,
+    "Date": "1996-08-28T00:00:00",
+    "RankId": 32
+  },
+  {
+    "Rank": 70,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 34,
+    "MovePosition": -5,
+    "Date": "1996-09-25T00:00:00",
+    "RankId": 33
+  },
+  {
+    "Rank": 59,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 33,
+    "MovePosition": 11,
+    "Date": "1996-10-23T00:00:00",
+    "RankId": 34
+  },
+  {
+    "Rank": 58,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 37,
+    "MovePosition": 1,
+    "Date": "1996-11-20T00:00:00",
+    "RankId": 35
+  },
+  {
+    "Rank": 55,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 38,
+    "MovePosition": 3,
+    "Date": "1996-12-18T00:00:00",
+    "RankId": 36
+  },
+  {
+    "Rank": 54,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 39,
+    "MovePosition": 1,
+    "Date": "1997-02-27T00:00:00",
+    "RankId": 37
+  },
+  {
+    "Rank": 46,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 41,
+    "MovePosition": 8,
+    "Date": "1997-04-09T00:00:00",
+    "RankId": 38
+  },
+  {
+    "Rank": 48,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 44,
+    "MovePosition": -2,
+    "Date": "1997-05-14T00:00:00",
+    "RankId": 39
+  },
+  {
+    "Rank": 35,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 44,
+    "MovePosition": 13,
+    "Date": "1997-06-18T00:00:00",
+    "RankId": 40
+  },
+  {
+    "Rank": 37,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 49,
+    "MovePosition": -2,
+    "Date": "1997-07-16T00:00:00",
+    "RankId": 41
+  },
+  {
+    "Rank": 39,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 49,
+    "MovePosition": -2,
+    "Date": "1997-08-20T00:00:00",
+    "RankId": 42
+  },
+  {
+    "Rank": 37,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 49,
+    "MovePosition": 2,
+    "Date": "1997-09-17T00:00:00",
+    "RankId": 43
+  },
+  {
+    "Rank": 36,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 50,
+    "MovePosition": 1,
+    "Date": "1997-10-17T00:00:00",
+    "RankId": 44
+  },
+  {
+    "Rank": 22,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 52,
+    "MovePosition": 14,
+    "Date": "1997-11-19T00:00:00",
+    "RankId": 45
+  },
+  {
+    "Rank": 20,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 55,
+    "MovePosition": 2,
+    "Date": "1997-12-23T00:00:00",
+    "RankId": 46
+  },
+  {
+    "Rank": 8,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 56,
+    "MovePosition": 12,
+    "Date": "1998-02-18T00:00:00",
+    "RankId": 47
+  },
+  {
+    "Rank": 12,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 58,
+    "MovePosition": -4,
+    "Date": "1998-03-18T00:00:00",
+    "RankId": 48
+  },
+  {
+    "Rank": 8,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 58,
+    "MovePosition": 4,
+    "Date": "1998-04-22T00:00:00",
+    "RankId": 49
+  },
+  {
+    "Rank": 8,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 58,
+    "MovePosition": 0,
+    "Date": "1998-05-20T00:00:00",
+    "RankId": 50
+  },
+  {
+    "Rank": 7,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 59,
+    "MovePosition": 1,
+    "Date": "1998-07-15T00:00:00",
+    "RankId": 51
+  },
+  {
+    "Rank": 7,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 64,
+    "MovePosition": 0,
+    "Date": "1998-08-19T00:00:00",
+    "RankId": 52
+  },
+  {
+    "Rank": 8,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 64,
+    "MovePosition": -1,
+    "Date": "1998-09-16T00:00:00",
+    "RankId": 53
+  },
+  {
+    "Rank": 8,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 64,
+    "MovePosition": 0,
+    "Date": "1998-10-21T00:00:00",
+    "RankId": 54
+  },
+  {
+    "Rank": 7,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 64,
+    "MovePosition": 1,
+    "Date": "1998-11-18T00:00:00",
+    "RankId": 55
+  },
+  {
+    "Rank": 6,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 64,
+    "MovePosition": 1,
+    "Date": "1998-12-23T00:00:00",
+    "RankId": 56
+  },
+  {
+    "Rank": 16,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 64,
+    "MovePosition": -10,
+    "Date": "1999-01-27T00:00:00",
+    "RankId": 57
+  },
+  {
+    "Rank": 16,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 643,
+    "MovePosition": 0,
+    "Date": "1999-02-24T00:00:00",
+    "RankId": 58
+  },
+  {
+    "Rank": 16,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 649,
+    "MovePosition": 0,
+    "Date": "1999-03-24T00:00:00",
+    "RankId": 59
+  },
+  {
+    "Rank": 16,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 650,
+    "MovePosition": 0,
+    "Date": "1999-04-21T00:00:00",
+    "RankId": 60
+  },
+  {
+    "Rank": 16,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 650,
+    "MovePosition": 0,
+    "Date": "1999-05-19T00:00:00",
+    "RankId": 61
+  },
+  {
+    "Rank": 16,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 647,
+    "MovePosition": 0,
+    "Date": "1999-06-16T00:00:00",
+    "RankId": 62
+  },
+  {
+    "Rank": 21,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 645,
+    "MovePosition": -5,
+    "Date": "1999-07-21T00:00:00",
+    "RankId": 63
+  },
+  {
+    "Rank": 22,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 624,
+    "MovePosition": -1,
+    "Date": "1999-08-18T00:00:00",
+    "RankId": 64
+  },
+  {
+    "Rank": 17,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 620,
+    "MovePosition": 5,
+    "Date": "1999-09-15T00:00:00",
+    "RankId": 65
+  },
+  {
+    "Rank": 15,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 656,
+    "MovePosition": 2,
+    "Date": "1999-10-13T00:00:00",
+    "RankId": 66
+  },
+  {
+    "Rank": 13,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 669,
+    "MovePosition": 2,
+    "Date": "1999-11-17T00:00:00",
+    "RankId": 67
+  },
+  {
+    "Rank": 13,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 691,
+    "MovePosition": 0,
+    "Date": "1999-12-22T00:00:00",
+    "RankId": 68
+  },
+  {
+    "Rank": 13,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 694,
+    "MovePosition": 0,
+    "Date": "2000-01-19T00:00:00",
+    "RankId": 69
+  },
+  {
+    "Rank": 13,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 694,
+    "MovePosition": 0,
+    "Date": "2000-02-16T00:00:00",
+    "RankId": 70
+  },
+  {
+    "Rank": 13,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 692,
+    "MovePosition": 0,
+    "Date": "2000-03-15T00:00:00",
+    "RankId": 71
+  },
+  {
+    "Rank": 11,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 689,
+    "MovePosition": 2,
+    "Date": "2000-04-12T00:00:00",
+    "RankId": 72
+  },
+  {
+    "Rank": 11,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 695,
+    "MovePosition": 0,
+    "Date": "2000-05-10T00:00:00",
+    "RankId": 73
+  },
+  {
+    "Rank": 10,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 693,
+    "MovePosition": 1,
+    "Date": "2000-06-07T00:00:00",
+    "RankId": 74
+  },
+  {
+    "Rank": 11,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 695,
+    "MovePosition": -1,
+    "Date": "2000-07-05T00:00:00",
+    "RankId": 75
+  },
+  {
+    "Rank": 10,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 705,
+    "MovePosition": 1,
+    "Date": "2000-08-09T00:00:00",
+    "RankId": 76
+  },
+  {
+    "Rank": 8,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 704,
+    "MovePosition": 2,
+    "Date": "2000-09-06T00:00:00",
+    "RankId": 77
+  },
+  {
+    "Rank": 10,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 714,
+    "MovePosition": -2,
+    "Date": "2000-10-11T00:00:00",
+    "RankId": 78
+  },
+  {
+    "Rank": 9,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 711,
+    "MovePosition": 1,
+    "Date": "2000-11-15T00:00:00",
+    "RankId": 79
+  },
+  {
+    "Rank": 9,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 712,
+    "MovePosition": 0,
+    "Date": "2000-12-20T00:00:00",
+    "RankId": 80
+  },
+  {
+    "Rank": 9,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 707,
+    "MovePosition": 0,
+    "Date": "2001-01-17T00:00:00",
+    "RankId": 81
+  },
+  {
+    "Rank": 9,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 707,
+    "MovePosition": 0,
+    "Date": "2001-02-14T00:00:00",
+    "RankId": 82
+  },
+  {
+    "Rank": 10,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 705,
+    "MovePosition": -1,
+    "Date": "2001-03-14T00:00:00",
+    "RankId": 83
+  },
+  {
+    "Rank": 11,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 701,
+    "MovePosition": -1,
+    "Date": "2001-04-11T00:00:00",
+    "RankId": 84
+  },
+  {
+    "Rank": 11,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 697,
+    "MovePosition": 0,
+    "Date": "2001-05-16T00:00:00",
+    "RankId": 85
+  },
+  {
+    "Rank": 11,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 689,
+    "MovePosition": 0,
+    "Date": "2001-06-20T00:00:00",
+    "RankId": 86
+  },
+  {
+    "Rank": 12,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 702,
+    "MovePosition": -1,
+    "Date": "2001-07-18T00:00:00",
+    "RankId": 87
+  },
+  {
+    "Rank": 13,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 688,
+    "MovePosition": -1,
+    "Date": "2001-08-22T00:00:00",
+    "RankId": 88
+  },
+  {
+    "Rank": 13,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 691,
+    "MovePosition": 0,
+    "Date": "2001-09-19T00:00:00",
+    "RankId": 89
+  },
+  {
+    "Rank": 12,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 705,
+    "MovePosition": 1,
+    "Date": "2001-10-17T00:00:00",
+    "RankId": 90
+  },
+  {
+    "Rank": 12,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 709,
+    "MovePosition": 0,
+    "Date": "2001-11-21T00:00:00",
+    "RankId": 91
+  },
+  {
+    "Rank": 11,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 709,
+    "MovePosition": 1,
+    "Date": "2001-12-19T00:00:00",
+    "RankId": 92
+  },
+  {
+    "Rank": 11,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 710,
+    "MovePosition": 0,
+    "Date": "2002-01-16T00:00:00",
+    "RankId": 93
+  },
+  {
+    "Rank": 11,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 710,
+    "MovePosition": 0,
+    "Date": "2002-02-13T00:00:00",
+    "RankId": 94
+  },
+  {
+    "Rank": 11,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 707,
+    "MovePosition": 0,
+    "Date": "2002-03-20T00:00:00",
+    "RankId": 95
+  },
+  {
+    "Rank": 10,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 708,
+    "MovePosition": 1,
+    "Date": "2002-04-17T00:00:00",
+    "RankId": 96
+  },
+  {
+    "Rank": 10,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 702,
+    "MovePosition": 0,
+    "Date": "2002-05-15T00:00:00",
+    "RankId": 97
+  },
+  {
+    "Rank": 16,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 702,
+    "MovePosition": -6,
+    "Date": "2002-07-03T00:00:00",
+    "RankId": 98
+  },
+  {
+    "Rank": 16,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 689,
+    "MovePosition": 0,
+    "Date": "2002-08-14T00:00:00",
+    "RankId": 99
+  },
+  {
+    "Rank": 20,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 688,
+    "MovePosition": -4,
+    "Date": "2002-09-18T00:00:00",
+    "RankId": 100
+  },
+  {
+    "Rank": 16,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 672,
+    "MovePosition": 4,
+    "Date": "2002-10-23T00:00:00",
+    "RankId": 101
+  },
+  {
+    "Rank": 16,
+    "TotalPoints": 0.0,
+    "PreviousPoints": 690,
+    "MovePosition": 0,
+    "Date": "2002-11-20T00:00:00",
+    "RankId": 102
+  }
+]
