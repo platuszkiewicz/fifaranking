@@ -3,13 +3,13 @@
 
 var Chart = (function () {
     var chartData = {};     // e.g. {
-                            //          'England': [
-                            //                        {'Date': '...', 'Move': '...', 'Rank': '...'},
-                            //                        {'Date': '...', 'Move': '...', 'Rank': '...'},
-                            //                          ...
-                            //                     ],
-                            //          'Poland': [...]
-                            //      }
+    //          'England': [
+    //                        {'Date': '...', 'Move': '...', 'Rank': '...'},
+    //                        {'Date': '...', 'Move': '...', 'Rank': '...'},
+    //                          ...
+    //                     ],
+    //          'Poland': [...]
+    //      }
     var teamsSelected = []; // e.g. ["Poland", "England"]
 
     var preparedData = {}; // contains 'teams' and 'data' ready for drawing SVG
@@ -28,15 +28,15 @@ var Chart = (function () {
                 multiple: true,
             });
             // ---------------------------------------------------------- START init for Poland 
-                $("#sel-chart").val(151).trigger("change"); // id for Poland
+            $("#sel-chart").val(151).trigger("change"); // id for Poland
 
-                teamsSelected = ["Poland"]; // array of selected teams names
+            teamsSelected = ["Poland"]; // array of selected teams names
 
-                $.getJSON('./data/teams/' + 'Poland' + '.json', function (teamArray) {
-                    chartData['Poland'] = teamArray;
-                    var preparedDataInit = prepareData(chartData);
-                    drawSVG(preparedDataInit.teams, preparedDataInit.data);
-                });
+            $.getJSON('./data/teams/' + 'Poland' + '.json', function (teamArray) {
+                chartData['Poland'] = teamArray;
+                var preparedDataInit = prepareData(chartData);
+                drawSVG(preparedDataInit.teams, preparedDataInit.data);
+            });
             // ----------------------------------------------------------- END init for Poland
 
             $('#sel-chart').on("change", function (event) {
@@ -214,6 +214,7 @@ var Chart = (function () {
 
     return _static;
 }());
+
 
 
 
