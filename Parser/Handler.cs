@@ -37,8 +37,8 @@ namespace Parser
                         break;
 
                     case "recalculateAll":
-                        //CreateRankingFiles();
-                        //CreateTeamFiles();
+                        CreateRankingFiles();
+                        CreateTeamFiles();
                         CreateTeamList();
                         break;
 

@@ -110,10 +110,12 @@ var List = (function () {
             ]
         });
 
-        $.getJSON('./data/rankings/' + 198 + '.json', function (dataString) {
-            rankingDate = moment(dataString.Date).format("D MMMM YYYY");
-            $('#list-name').text('Date of publication: ' + rankingDate);
-        });
+        // by default: table fill with newest ranking. Uncomment below to start with ranking with specific Id
+
+        //$.getJSON('./data/rankings/' + 198 + '.json', function (dataString) {
+        //    rankingDate = moment(dataString.Date).format("D MMMM YYYY");
+        //    $('#list-name').text('Date of publication: ' + rankingDate);
+        //});
     }
 
     function reloadTable(id) {

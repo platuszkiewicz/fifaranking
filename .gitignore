@@ -241,3 +241,4 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /FifaRanking.www/FifaRanking.www.zip.exclude
+/FifaRanking.www/FifaRanking.www.zip

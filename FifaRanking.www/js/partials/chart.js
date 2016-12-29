@@ -1,4 +1,4 @@
-﻿//TODO:
+//TODO:
 // - style!
 
 var Chart = (function () {
@@ -15,7 +15,8 @@ var Chart = (function () {
     var preparedData = {}; // contains 'teams' and 'data' ready for drawing SVG
 
     // init and load data for Poland
-    function initChart() {        
+    function initChart() {
+
         $.getJSON('./data/teams/_teamsList.json', function (teamsArray) {
             // change 'Name' property to 'text' - select2 requirement
             for (var i = 0; i < teamsArray.length; i++) {
@@ -31,6 +32,7 @@ var Chart = (function () {
             $("#sel-chart").val(151).trigger("change"); // id for Poland
 
             teamsSelected = ["Poland"]; // array of selected teams names
+            chartData = {}; // delete line if want saving svg after page changing
 
             $.getJSON('./data/teams/' + 'Poland' + '.json', function (teamArray) {
                 chartData['Poland'] = teamArray;
@@ -42,7 +44,7 @@ var Chart = (function () {
             $('#sel-chart').on("change", function (event) {
                 var selectedValues = $('#sel-chart').val();
 
-                if (selectedValues!=null) {
+                if (selectedValues != null) {
                     teamsSelected = selectedValues.map(function (teamId) {
                         return teamsArray[teamId].text
                     });
@@ -65,7 +67,7 @@ var Chart = (function () {
     }
 
     // converts 'chartData' to 'preparedData'
-    function prepareData(chartData) { 
+    function prepareData(chartData) {
         var teams = [];
         var data = [];
 
@@ -93,7 +95,7 @@ var Chart = (function () {
                         dataObject_new.RankId = rankingElement.RankId;
                         dataObject_new.date = new Date(rankingElement.Date);
                         dataObject_new[team] = rankingElement.Rank;
-                        data.push(dataObject_new);                 
+                        data.push(dataObject_new);
                     }
                 } else { // pierwszy wpis do "data"
                     var dataObject_first = {};
@@ -150,14 +152,23 @@ var Chart = (function () {
         g.append("g")
             .attr("class", "axis axis--x")
             .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x));
+            .call(d3.axisBottom(x))
+            .style("font", "12px sans-serif")
+          .append("text")
+            .attr("transform", "translate(" + 0.99 * width + ",0)")
+            .attr("y", -16)
+            .attr("dy", "0.71em")
+            .attr("fill", "#000")
+            .style("font", "12px sans-serif")
+            .text("Year");
 
         g.append("g")
             .attr("class", "axis axis--y")
             .call(d3.axisLeft(y))
+            .style("font", "12px sans-serif")
           .append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 6)
+           // .attr("transform", "rotate(-90)")
+            .attr("y", -20)
             .attr("dy", "0.71em")
             .attr("fill", "#000")
             .text("Position");
@@ -177,7 +188,8 @@ var Chart = (function () {
             .attr("transform", function (d) { return "translate(" + x(d.value.date) + "," + y(d.value.rank) + ")"; })
             .attr("x", 3)
             .attr("dy", "0.35em")
-            .style("font", "10px sans-serif")
+            .style("font", "14px sans-serif")
+            .style("fill", function (d) { return d.color = z(d.id); })
             .text(function (d) { return d.id; });
     }
 
@@ -214,7 +226,6 @@ var Chart = (function () {
 
     return _static;
 }());
-
 
 
 

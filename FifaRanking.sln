@@ -8,6 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FifaRanking.www", "FifaRanking.www\", "{8278A42B-C679-4B54-B722-74659A73D6C5}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{a779bd87-2934-4fdf-993c-b2d3231ac60a}|Parser.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_49432"
 		Debug.AspNetCompiler.PhysicalPath = "FifaRanking.www\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49432\"
