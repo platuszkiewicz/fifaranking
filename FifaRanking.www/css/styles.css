@@ -1,11 +1,10 @@
-header {
+/*header {
 	margin-bottom:30px;
-}
+}*/
 
-    /*body {
-      font: 10px sans-serif;
-    }*/
+/*#region CHART*/
 
+/*svg style*/
     .axis path,
     .axis line {
       fill: none;
@@ -24,3 +23,29 @@ header {
       stroke: steelblue;
       stroke-width: 1.5px;
     }
+
+/*chart navigation style*/
+    #chart-navigation{
+        text-align:center;
+        margin-bottom: 20px;
+    }
+    #form-chart{
+        width: 45%;
+        display: inline-block;
+        margin:auto auto auto 0;
+    }
+
+    #sel-chart{
+        width: 90%;
+    }
+
+    #btn-clearChart{
+
+    }
+
+    .block { text-align:left;}
+    .center { margin:auto;}
+    .left { margin:auto auto auto 0;}
+    .right { margin:auto 0 auto auto;}
+
+/*#endregion*/

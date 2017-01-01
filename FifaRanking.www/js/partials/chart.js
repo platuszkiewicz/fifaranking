@@ -63,6 +63,16 @@ var Chart = (function () {
                     deleteSVG();
                 }
             });
+
+            $("#btn-clearChart").on('click', function (event) {
+                //$("#sel-chart").each(function (a) {
+                //    console.log(this,a);
+                //    $(this).select2('val', '')
+                //});
+                $("#sel-chart").val('').change();
+                $("#sel-chart").select2('open');
+                deleteSVG();
+            });
         });
     }
 
