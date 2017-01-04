@@ -1,7 +1,10 @@
 /*header {
 	margin-bottom:30px;
 }*/
-
+#main-content-wrapper {
+    height: 85%;
+    min-height: 85%;
+}
 /*#region CHART*/
 
 /*svg style*/

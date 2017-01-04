@@ -16,6 +16,10 @@ var Chart = (function () {
 
     // init and load data for Poland
     function initChart() {
+        deleteSVG();
+        setTimeout(function () {
+            removeAds();
+        }, 400);
 
         $.getJSON('./data/teams/_teamsList.json', function (teamsArray) {
             // change 'Name' property to 'text' - select2 requirement
@@ -28,7 +32,7 @@ var Chart = (function () {
                 data: teamsArray,
                 multiple: true,
             });
-            // ---------------------------------------------------------- START init for Poland 
+            // ---------------------------------------------------------- START init for Poland
             $("#sel-chart").val(151).trigger("change"); // id for Poland
 
             teamsSelected = ["Poland"]; // array of selected teams names
@@ -98,7 +102,6 @@ var Chart = (function () {
                             addedDataObject = true;
                             break; //break for loop
                         }
-
                     }
                     if (!addedDataObject) { // tworzę nowy rankId
                         var dataObject_new = {};
@@ -136,7 +139,7 @@ var Chart = (function () {
         }
 
         var svg = d3.select("svg"),
-        margin = { top: 20, right: 80, bottom: 30, left: 50 },
+        margin = { top: 20, right: 85, bottom: 30, left: 50 },
         width = svg.attr("width") - margin.left - margin.right,
         height = svg.attr("height") - margin.top - margin.bottom,
         g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -177,7 +180,6 @@ var Chart = (function () {
             .call(d3.axisLeft(y))
             .style("font", "12px sans-serif")
           .append("text")
-           // .attr("transform", "rotate(-90)")
             .attr("y", -20)
             .attr("dy", "0.71em")
             .attr("fill", "#000")
@@ -204,10 +206,11 @@ var Chart = (function () {
     }
 
     function deleteSVG() {
-        $('#main-content').find('svg')[0].innerHTML = '';
+        $('#main-content').find('svg')[0].innerHTML = "";
+        d3.selectAll("svg > *").remove();
     }
 
-    // load other singletons. Other singleton contain some logic which can be packed, i.e. modal	
+    // load other singletons. Other singleton contain some logic which can be packed, i.e. modal
     function Chart() {
         //this.otherSingleton = new OtherSingleton();
     }
@@ -218,7 +221,6 @@ var Chart = (function () {
 
         initChart();
     }
-
 
     ///////////////////////////////////////////////////
     // Singleton implementation ///////////////////////
@@ -236,6 +238,3 @@ var Chart = (function () {
 
     return _static;
 }());
-
-
-
