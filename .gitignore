@@ -242,3 +242,5 @@ ModelManifest.xml
 .fake/
 /FifaRanking.www/FifaRanking.www.zip.exclude
 /FifaRanking.www/FifaRanking.www.zip
+/FifaRanking.www/Bin/Parser.dll
+/FifaRanking.www/Bin/Parser.pdb
