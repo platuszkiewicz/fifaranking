@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     // *** *** *** Uncomment to recalculate all (rankings, teams) *** *** ***
     // REMEMBER: delete data/rankings and data/teams content
-    recaluculateAll();
+    //recaluculateAll();
 
     // *** *** *** Uncomment to update with last ranking (rankings, teams) *** *** ***
     //updateWithLast();

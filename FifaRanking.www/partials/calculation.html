@@ -1,10 +1,157 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
-    calculation method
-</body>
-</html>
+﻿<h2>What is FIFA ranking?</h2>
+<p style="text-align: justify">
+    FIFA World Ranking was introduced in December 1992. The main purpose of this ranking is to represent the force of
+    each country in world football competition. Ranking is based on national team results in last four years.
+    Also it is used to determine the seeds for the World Cup Finals and World Cup Qualifications.
+    For example, before European part of World Cup Qualifications it is common to divide teams:
+    'first' nine teams go to bracket 1., second 'nine' teams go to bracket 2., and so on. Then comes the draw, and in Qualifications
+    every group has one team from a bracket 1., one from bracket 2., and so on. In this case FIFA ranking helps to provide
+    possibly equal qualification groups.
+</p>
+
+<h2>Current calculation method</h2>
+<p>
+    Current calculation method was introduced after 2006 FIFA World Cup, but it had some minor improvements by that time.
+    For ranking are taken matches played by first, representative team (the "A" team). This means, that there are taken into
+    account following matches:
+    <ul>
+        <li>FIFA World Cup</li>
+        <li>FIFA World Cup qualifiers</li>
+        <li>FIFA Confederations Cup</li>
+        <li>continental final tournaments (i.e. UEFA EURO)</li>
+        <li>continental qualifying competitions (i.e. qualifications to UEFA EURO)</li>
+        <li>and international friendlies</li>
+    </ul>
+    For each match the national team gets some points. The number of points depends on following factors:
+    <ul>
+        <li>Match result</li>
+        <li>Match status</li>
+        <li>Opposition strength</li>
+        <li>Regional strength</li>
+    </ul>
+    Each factor is calculated into number, and then points given to team for a match can be calculated from formula:
+    <div id="formula" class="equation"></div>
+</p>
+
+<h4>Match result</h4>
+<p>This factor is the simplest one and depends on result:</p>
+<ul>
+    <li>3 points - win (no penalty)</li>
+    <li>2 points - win (penalty shootout)</li>
+    <li>1 point - draw</li>
+    <li>1 point - loss (penalty shootout)</li>
+    <li>0 points - loss (no penalty shootout)</li>
+</ul>
+
+<h4>Match status</h4>
+<p>
+    FIFA tried to differ matches of not equal importance. There is no doubt that matches on World Cup have higher significance
+    than friendly matches, when it is common to play with young or less experienced players.
+</p>
+<ul>
+    <li>4.0 point - World Cup finals match</li>
+    <li>3.0 point - Continental cup (i.e. UEFA EURO) and Confederations Cup finals</li>
+    <li>2.5 point - Qualifiers for FIFA World Cup and Continental cup </li>
+    <li>1.0 point - Friendly match</li>
+</ul>
+
+<h4>Oppostion strength</h4>
+<p>
+    Winning with one of the strongest teams of the world should give the award, while winning with weak contry should
+    give small amount of points. That's why opposition strength factor is used. It is basen on opponent's ranking
+    position. The opposion strength factor can be calculated from formula:
+    <div id="oppositionStrength" class="equation"></div>
+    But there are exceptions:
+    <ul>
+        <li>facing team with ranking position #1 gives you an oppostion strength factor = 2</li>
+        <li>facing team with ranking position #150 and below gives you an opposition strength factor = 0.5</li>
+    </ul>
+</p>
+
+<h4>Regional strength</h4>
+<p>
+    The last factor represents strength of entire confederations. When two teams play a match their regional stregth
+    factor in calculation is always equal and is takin from the table below. If teams are from different confederations, the
+    arithmetic mean is taken.The table is updated after each World Cup and represents strength of confederations.
+    <table id="regionalStrength-table" class="table table-bordered">
+        <tr>
+            <th>Confederation</th>
+            <th>After 2014 World Cup</th>
+            <th>After 2010 World Cup</th>
+            <th>After 2006 World Cup</th>
+            <th>Up to and including 2006 World Cup</th>
+        </tr>
+        <tr>
+            <td>UEFA (Europe)</td>
+            <td>0.99</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+        </tr>
+        <tr>
+            <td>CONMEBOL(South America)</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>0.98</td>
+            <td>1.00</td>
+        </tr>
+        <tr>
+            <td>CONCACAF(North and Central America and Caribbean)</td>
+            <td>0.85</td>
+            <td>0.88</td>
+            <td>0.85</td>
+            <td>0.88</td>
+        </tr>
+        <tr>
+            <td>AFC (Asia)</td>
+            <td>0.85</td>
+            <td>0.86</td>
+            <td>0.85</td>
+            <td>0.85</td>
+        </tr>
+        <tr>
+            <td>CAF (Africa)</td>
+            <td>0.85</td>
+            <td>0.86</td>
+            <td>0.85</td>
+            <td>0.85</td>
+        </tr>
+        <tr>
+            <td>OFC (Oceania)</td>
+            <td>0.85</td>
+            <td>0.85</td>
+            <td>0.85</td>
+            <td>0.85</td>
+        </tr>
+    </table>
+</p>
+
+<h4>Final calculation</h4>
+<p>
+    To get ranking points of some team, there are taken into account all its matches from last 4 years (48 months). For
+    each year there is calculated average for team per match. Then, these averages are summed with weighting:
+    <ul>
+        <li>1.0 - matches within last 12 months</li>
+        <li>0.5 - 12–24 months ago</li>
+        <li>0.3 - 24–36 months ago</li>
+        <li>0.2 - 36–48 months ago	</li>
+    </ul>
+</p>
+
+<h2>Example</h2>
+<p>On 11th November 2016 in Bucharest, Poland won 3-0 with Romania in World Cup 2018 Qualifiers. For this match Poland 
+    will have 1479 points, because:
+    <ul>
+        <li>3 in "Match result" (won)</li>
+        <li>2.5 in "Match status" (Qualifiers for FIFA World Cup)</li>
+        <li>1.66 in "Oppostion strength" (Romania were ranked at #34 position)</li>
+        <li>0.99 in "Regional strength" (both teams are part of UEFA confederation)</li>
+    </ul>
+    If we multiply these numbers, and multiply result by 100 we get 1479 points for Poland for this match. To see more examples, 
+    please visit <a href="https://en.wikipedia.org/wiki/FIFA_World_Rankings#Examples">Wikipiedia</a>.
+</p>
+
+<hr /><p style="font-size: 10px; text-align:right">
+    Material was written using <a href="https://en.wikipedia.org/wiki/FIFA_World_Rankings">Wikipiedia</a> and
+    <a href="http://www.fifa.com/fifa-world-ranking/">FIFA</a> websites.
+</p>

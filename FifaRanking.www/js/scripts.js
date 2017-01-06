@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-     initNavigationBar();
+    initNavigationBar();
 });
 
 function initNavigationBar() {
@@ -11,64 +11,62 @@ function initNavigationBar() {
 
     // initial partial
     $("#main-content").load("./partials/chart.html", null, function () {
-        adjustMainContentWrapper();
-        Chart.getInstance().init(); // On Load 
+        adjustSVG();
+        Chart.getInstance().init(); // On Load
     });
 
     // ----- links to partials
     $('#chart-btn').on('click', function () {
         $("#main-content").load("./partials/chart.html", null, function () {
-            adjustMainContentWrapper();
-            Chart.getInstance().init(); // On Load 
+            adjustSVG();
+            Chart.getInstance().init(); // On Load
         });
     });
     $('#list-btn').on('click', function () {
         $("#main-content").load("./partials/list.html", null, function () {
-            List.getInstance().init(); // On Load 
+            List.getInstance().init(); // On Load
         });
     });
     $('#calculation-btn').on('click', function () {
         $("#main-content").load("./partials/calculation.html", null, function () {
-
+            CalculationMethod.getInstance().init(); // On Load
         });
     });
     $('#schedule-btn').on('click', function () {
         $("#main-content").load("./partials/schedule.html", null, function () {
-
         });
     });
 }
 
-function adjustMainContentWrapper(callback) {
-    // initial
-    setDimensions();
+function adjustSVG(partial) {
+    var mainContentWrapperFACTORS = { smallHEIGHT: 0.75, smallWIDTH: 1, bigHEIGHT: 0.83, bigWIDTH: 1 };
 
-    // window resize
-    window.addEventListener('resize', function (event) {
-        // nie zadziała bo svg juz wczesniej jest narysowane
-    });
+    //switch(partial) {
+    //    case "chart":
+    //        mainContentWrapperFACTORS.smallHEIGHT = 0.75;
+    //        mainContentWrapperFACTORS.bigHEIGHT = 0.85;
+    //        break;
+    //    case "list":
 
-    // mobile rotate
-    $(window).bind('orientationchange', function (event) {
-        // nie zadziała bo svg juz wczesniej jest narysowane
-    });
+    //        break;
+    //    case "calculationMethod":
+    //        mainContentWrapperFACTORS.smallWIDTH = 0.75;
+    //        mainContentWrapperFACTORS.bigWIDTH = 0.6;
+    //        break;
+    //    case "schedule":
 
-    function setDimensions() {
-        // main-content-wrapper dimensions
-        //if (window.innerWidth < 1000) { //small screen
-        //    $("#main-content").parent().css('width', '100%');
-        //} else { // big screen
-        //    $("#main-content").parent().css('width', String(-0.025 * window.innerWidth + 120) + '%');
-        //}
+    //        break;
+    //    default:
+    //        console.log("adjustMainContentWrapper unknown parameter: "+ partial);
+    //}
 
-        // svg dimensions
-        if (window.innerHeight < 550) { // mobile
-            $("svg").attr("height", $("#main-content").parent().height() * 0.75);
-            $("svg").attr("width", $("#main-content").parent().width() * 1);
-        } else { // desktop
-            $("svg").attr("height", $("#main-content").parent().height() * 0.85);
-            $("svg").attr("width", $("#main-content").parent().width() * 1);
-        }
+    // main-content-wrapper dimensions
+    if (window.innerHeight < 550) { // mobile
+        $("svg").attr("height", $("#main-content").parent().height() * mainContentWrapperFACTORS.smallHEIGHT);
+        $("svg").attr("width", $("#main-content").parent().width() * mainContentWrapperFACTORS.smallWIDTH);
+    } else { // desktop
+        $("svg").attr("height", $("#main-content").parent().height() * mainContentWrapperFACTORS.bigHEIGHT);
+        $("svg").attr("width", $("#main-content").parent().width() * mainContentWrapperFACTORS.bigWIDTH);
     }
 }
 

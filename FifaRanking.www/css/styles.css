@@ -53,3 +53,14 @@
     .right { margin:auto 0 auto auto;}
 
 /*#endregion*/
+
+/*#region CalculationMethod*/
+.equation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h4{
+    margin-top: 30px;
+}
+/*#endregion*/

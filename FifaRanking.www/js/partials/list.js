@@ -87,8 +87,6 @@ var List = (function () {
         });
     }
 
-
-
     function initTable(id) {
         console.log("initTable for id=" + id);
         dataTable = $('#ranking-list').DataTable({
@@ -122,6 +120,7 @@ var List = (function () {
         dataTable.ajax.url("data/rankings/" + id + ".json").load(function (jsonResponse) {
             rankingDate = moment(jsonResponse.Date).format("D MMMM YYYY");
             $('#list-name').text('Date of publication: ' + rankingDate);
+            console.log("reload table for id=" + id);
         }, null);
     }
 
@@ -134,7 +133,7 @@ var List = (function () {
         var that = this;
         // ******** ALL ACTION ON SITE GOES HERE *********
         fillSelects_list(function () {
-            initTable(268);
+            initTable(269); // imidately after init is reload, so...
         });
     }
 
@@ -144,7 +143,7 @@ var List = (function () {
     ///////////////////////////////////////////////////
     var _instance;
     var _static = {
-        name: "PageName",
+        name: "List",
         getInstance: function () {
             if (_instance === undefined) {
                 _instance = new List();
