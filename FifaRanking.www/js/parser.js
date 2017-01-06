@@ -1,20 +1,28 @@
 ﻿$(document).ready(function () {
     // *** *** *** Uncomment to recalculate all (rankings, teams) *** *** ***
-
-    //$.ajax({
-    //    url: "/parser?action=recalculateAll",
-    //    type: "POST",
-    //    data: {},
-    //    success: function (data) {
-
-    //    },
-    //    error: function (jqXHR, textStatus, errorThrown) {
-    //        alert("Error! Status: " + textStatus + ", " + errorThrown);
-    //    }
-    //});
+    // REMEMBER: delete data/rankings and data/teams content
+    recaluculateAll();
 
     // *** *** *** Uncomment to update with last ranking (rankings, teams) *** *** ***
+    //updateWithLast();
 
+});
+
+function recaluculateAll() {
+    $.ajax({
+        url: "/parser?action=recalculateAll",
+        type: "POST",
+        data: {},
+        success: function (data) {
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert("Error! Status: " + textStatus + ", " + errorThrown);
+        }
+    });
+}
+
+function updateWithLast() {
     $.ajax({
         url: "/parser?action=updateWithLast",
         type: "POST",
@@ -27,4 +35,4 @@
             alert("Error! Status: " + textStatus + ", " + errorThrown);
         }
     });
-});
+}

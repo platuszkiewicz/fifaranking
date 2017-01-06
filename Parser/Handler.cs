@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 
 namespace Parser
@@ -35,17 +36,9 @@ namespace Parser
                     case "recalculateAll":
                         CreateRankingFiles();
                         CreateTeamFiles();
-                        CreateTeamList(); // musi być ostatnie!
                         break;
 
                     case "updateWithLast":
-                        // (0) znajdź jakie powinno być najnowsze id wg plików i porównaj ze stroną
-                        // RANKINGS:
-                        // (1) dopisz jeden element do _rankingsList.json
-                        // (2) stwórz plik xxx.json gdzie xxx to id najnowszego rankingu
-                        // TEAMS:
-                        // (3) dopisz do każdej drużyny najnowszy ranking. Sprowadza się to do CreateTeamFiles() tyle że bez pętli
-                        // (4) usuń i zrób od nowa _teamsList.json (mogła dojść nowa drużyna)
                         UpdateWithLast();
                         break;
                 }
@@ -135,10 +128,12 @@ namespace Parser
                 string[] dateTable = dateString.Split(' ');
                 latestRanking.Date = new DateTime(Int32.Parse(dateTable[2]), DateTime.ParseExact(dateTable[1], "MMMM", CultureInfo.InvariantCulture).Month, Int32.Parse(dateTable[0]));
             }
-            catch // hak na pierwszy ranking o id=1 (lub inne błędy)
+            catch (Exception ex) // hak na pierwszy ranking o id=1 (lub inne błędy)
             {
                 latestRanking.Date = new DateTime(1992, 12, 1);
-                //throw;
+                if(id != 1) {
+                    throw new ApplicationException("Brak rankingu id=" + id.ToString() + " na stronie FIFA", ex); ; // nie ma na stronie rankingu o danym id
+                }
             }
 
             // get team data
@@ -149,7 +144,11 @@ namespace Parser
                     var team = new TeamInRank();
 
                     team.Rank = Int32.Parse(row.SelectNodes(".//td[@class='tbl-rank']").SingleOrDefault<HtmlNode>().InnerText);
-                    team.Name = (row.SelectNodes(".//td[@class='tbl-teamname']").SingleOrDefault<HtmlNode>().InnerText);
+
+                    var name = (row.SelectNodes(".//td[@class='tbl-teamname']").SingleOrDefault<HtmlNode>().InnerText);
+                    byte[] bytes = Encoding.Default.GetBytes(name);
+                    team.Name = Encoding.UTF8.GetString(bytes);
+                     
                     team.TotalPoints = Double.Parse(row.SelectNodes(".//td[@class='tbl-points']").SingleOrDefault<HtmlNode>().InnerText.Split('(', ')')[1], System.Globalization.CultureInfo.InvariantCulture);
                     team.PreviousPoints = Int32.Parse(row.SelectNodes(".//td[@class='tbl-prevpoints']").SingleOrDefault<HtmlNode>().InnerText);
                     team.MovePosition = Int32.Parse(row.SelectNodes(".//td[@class='tbl-prevrank']").SingleOrDefault<HtmlNode>().InnerText);
@@ -165,39 +164,50 @@ namespace Parser
 
             for (var i = 1; i < 500; i++)
             {
-                var ranking = GetRankingById(i);
-                foreach (var teamInRank in ranking.Teams)
+                try
                 {
-                    TeamInFile teamInFile = new Model.TeamInFile()
+                    var ranking = GetRankingById(i);
+                    foreach (var teamInRank in ranking.Teams)
                     {
-                        Rank = teamInRank.Rank,
-                        TotalPoints = teamInRank.TotalPoints,
-                        PreviousPoints = teamInRank.PreviousPoints,
-                        MovePosition = teamInRank.MovePosition,
-                        Date = ranking.Date,
-                        RankId = ranking.Id
-                    };
-
-                    if (System.IO.File.Exists(path + "/data/teams/" + teamInRank.Name + ".json"))
-                    { // plik istnieje - dopisz
-                        string output = "";
-                        using (StreamReader r = new StreamReader(path + "/data/teams/" + teamInRank.Name + ".json"))
+                        TeamInFile teamInFile = new Model.TeamInFile()
                         {
-                            string json = r.ReadToEnd();
-                            List<TeamInFile> items = JsonConvert.DeserializeObject<List<TeamInFile>>(json);
-                            items.Add(teamInFile);
-                            output = Newtonsoft.Json.JsonConvert.SerializeObject(items, Newtonsoft.Json.Formatting.Indented);
-                        }
-                        System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", output);
-                    }
-                    else // plik nie istnieje - zrób nowy
-                    {
-                        List<TeamInFile> initialList = new List<TeamInFile>(); // lista z tylko jednym wpisem
-                        initialList.Add(teamInFile);
-                        string json = JsonConvert.SerializeObject(initialList, Newtonsoft.Json.Formatting.Indented);
+                            Rank = teamInRank.Rank,
+                            TotalPoints = teamInRank.TotalPoints,
+                            PreviousPoints = teamInRank.PreviousPoints,
+                            MovePosition = teamInRank.MovePosition,
+                            Date = ranking.Date,
+                            RankId = ranking.Id
+                        };
 
-                        System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", json);
+                        if (System.IO.File.Exists(path + "/data/teams/" + teamInRank.Name + ".json"))
+                        { // plik istnieje - dopisz
+                            string output = "";
+                            using (StreamReader r = new StreamReader(path + "/data/teams/" + teamInRank.Name + ".json"))
+                            {
+                                string json = r.ReadToEnd();
+                                List<TeamInFile> items = JsonConvert.DeserializeObject<List<TeamInFile>>(json);
+                                items.Add(teamInFile);
+                                output = Newtonsoft.Json.JsonConvert.SerializeObject(items, Newtonsoft.Json.Formatting.Indented);
+                            }
+                            System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", output);
+                        }
+                        else // plik nie istnieje - zrób nowy
+                        {
+                            List<TeamInFile> initialList = new List<TeamInFile>(); // lista z tylko jednym wpisem
+                            initialList.Add(teamInFile);
+                            string json = JsonConvert.SerializeObject(initialList, Newtonsoft.Json.Formatting.Indented);
+
+                            System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", json);
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    if (i>260) // zaimportowałem wszystkie rankingi do plików [kraj].json
+                    {
+                        CreateTeamList(); // tworzę listę krajów na podstawie plików
+                    }
+                    throw ex;
                 }
             }
         }
@@ -223,9 +233,8 @@ namespace Parser
                 {
                     string json = JsonConvert.SerializeObject(rankingList, Newtonsoft.Json.Formatting.Indented);
                     System.IO.File.WriteAllText(path + "data/rankings/_rankingsList.json", json);
-                    Exception ex2 = (Exception)Activator.CreateInstance(ex.GetType(), "Wykonano 'CreateRankingFiles' aż do id=" + (i-1).ToString() +". Nie ma rankingu o Id="+i.ToString(), ex);
-                    break; // przerywam pętlę
-                    throw;
+                    break;
+                    throw new ApplicationException("Wykonano 'CreateRankingFiles' aż do id = " + (i-1).ToString() +".Nie ma rankingu o Id = "+i.ToString(), ex);
                 }
             }
         }
@@ -332,13 +341,8 @@ namespace Parser
             }
             catch (Exception ex) // nie ma rankingu o takim Id
             {
-                Exception ex2 = (Exception)Activator.CreateInstance(ex.GetType(), "Nie powiodło się updateWithLast. Sprawdź czy dane nie są już aktualne.", ex);
-                throw ex2;
+                throw new ApplicationException("Nie powiodło się updateWithLast. Sprawdź czy dane nie są już aktualne. " + ex.Message, ex);
             }
         }
     }
 }
-
-// TODO
-//  - nazwy niektorych druzyn sa źle wyswietlane (SĂŁo TomĂ© e PrĂ­ncipe)
-//  - Get Latest Ranking nalezy dodac Id
