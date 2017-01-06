@@ -24,16 +24,25 @@ function initNavigationBar() {
     });
     $('#list-btn').on('click', function () {
         $("#main-content").load("./partials/list.html", null, function () {
+            setTimeout(function () {
+                removeAds();
+            }, 400);
             List.getInstance().init(); // On Load
         });
     });
     $('#calculation-btn').on('click', function () {
         $("#main-content").load("./partials/calculation.html", null, function () {
+            setTimeout(function () {
+                removeAds();
+            }, 400);
             CalculationMethod.getInstance().init(); // On Load
         });
     });
     $('#schedule-btn').on('click', function () {
         $("#main-content").load("./partials/schedule.html", null, function () {
+            setTimeout(function () {
+                removeAds();
+            }, 400);
         });
     });
 }

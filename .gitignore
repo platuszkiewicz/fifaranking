@@ -244,3 +244,4 @@ ModelManifest.xml
 /FifaRanking.www/FifaRanking.www.zip
 /FifaRanking.www/Bin/Parser.dll
 /FifaRanking.www/Bin/Parser.pdb
+*.xlsx
