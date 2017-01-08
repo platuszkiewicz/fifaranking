@@ -1,1 +1,1 @@
-DEMO: [a link](http://fifaranking.somee.com)
+DEMO: [fifaranking.somee.com](http://fifaranking.somee.com)
