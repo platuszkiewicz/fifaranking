@@ -1,5 +1,5 @@
 ﻿<h2>What is FIFA ranking?</h2>
-<p style="text-align: justify">
+<p>
     FIFA World Ranking was introduced in December 1992. The main purpose of this ranking is to represent the force of
     each country in world football competition. Ranking is based on national team results in last four years.
     Also it is used to determine the seeds for the World Cup Finals and World Cup Qualifications.
@@ -138,8 +138,9 @@
     </ul>
 </p>
 
-<h2>Example</h2>
-<p>On 11th November 2016 in Bucharest, Poland won 3-0 with Romania in World Cup 2018 Qualifiers. For this match Poland 
+<h2>Example (single match)</h2>
+<p>
+    On 11th November 2016 in Bucharest, Poland won 3-0 with Romania in World Cup 2018 Qualifiers. For this match Poland
     will have 1479 points, because:
     <ul>
         <li>3 in "Match result" (won)</li>
@@ -147,8 +148,29 @@
         <li>1.66 in "Oppostion strength" (Romania were ranked at #34 position)</li>
         <li>0.99 in "Regional strength" (both teams are part of UEFA confederation)</li>
     </ul>
-    If we multiply these numbers, and multiply result by 100 we get 1479 points for Poland for this match. To see more examples, 
+    If we multiply these numbers, and multiply result by 100 we get 1479 points for Poland for this match. To see more examples,
     please visit <a href="https://en.wikipedia.org/wiki/FIFA_World_Rankings#Examples">Wikipiedia</a>.
+</p>
+
+<h2> Example (full calculation)</h2>
+<p>
+    To check whether I understand FIFA method of calculation ranking, I decided to analyze Poland national team matches from
+    years 2013-2016 and compare result with <a href="http://www.fifa.com/fifa-world-ranking/ranking-table/men/rank=269/index.html">
+    last ranking in 2016</a>. This means, that matches from "last 12 months" are all matches in 2016, matches from "1-2 years ago"
+    are matches in 2015 and so on. I created spredsheet, copied results of matches from <a href="http://soccerstand.com/team/poland/2HzmcynI/">
+    soccerstand.com</a> and applied calculation method showed in this article. I received same numbers as at FIFA website, which
+    is a good thing, but I discovered some differences. I am not sure whether I made a mistake or FIFA did (users on <a href="http://www.football-rankings.info/">football-rankings.info</a>
+    noticed that FIFA makes some minor mistakes in their calcualtion from time to time). However, differences are rather small
+    and here comes a list:
+    <ul>
+        <li>
+            for match with Liechtenstein 04.06.2013 FIFA assumed that Liechtenstein position in ranking was #158,
+            but in fact it was position #148 (ranking from 9th May)
+        </li>
+        <li>FIFA didn't include match with Romania on 02.02.2013 in 2013 year average</li>
+    </ul>
+    My spreadsheet can be downloaded from <a href="../resources/check_Poland.xlsx">here</a>. If you see any errors, or have
+    questions, please contact me <a href="mailto:piotr.latuszkiewicz@gmail.com">by email</a>.
 </p>
 
 <hr /><p style="font-size: 10px; text-align:right">

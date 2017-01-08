@@ -48,7 +48,7 @@ function initNavigationBar() {
 }
 
 function adjustSVG(partial) {
-    var mainContentWrapperFACTORS = { smallHEIGHT: 0.75, smallWIDTH: 1, bigHEIGHT: 0.83, bigWIDTH: 1 };
+    var mainContentWrapperFACTORS = { smallHEIGHT: 0.75, smallWIDTH: 1, bigHEIGHT: 0.80, bigWIDTH: 1 };
 
     //switch(partial) {
     //    case "chart":
