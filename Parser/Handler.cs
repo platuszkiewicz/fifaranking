@@ -34,6 +34,7 @@ namespace Parser
                 switch (action)
                 {
                     case "recalculateAll":
+                        DeleteFiles();
                         CreateRankingFiles();
                         CreateTeamFiles();
                         break;
@@ -78,6 +79,8 @@ namespace Parser
         }
 
         #endregion IHttpHandler Members
+
+        #region Private Methods
 
         private Ranking GetLatestRanking() // nieużywane
         {
@@ -124,16 +127,22 @@ namespace Parser
             // get date
             try
             {
-                var dateString = html.DocumentNode.SelectNodes("//div[@class='slider slider-mock ranking-browser']/div[@class='slider-wrap']/ul/li").SingleOrDefault<HtmlNode>().InnerText;
-                string[] dateTable = dateString.Split(' ');
-                latestRanking.Date = new DateTime(Int32.Parse(dateTable[2]), DateTime.ParseExact(dateTable[1], "MMMM", CultureInfo.InvariantCulture).Month, Int32.Parse(dateTable[0]));
-            }
-            catch (Exception ex) // hak na pierwszy ranking o id=1 (lub inne błędy)
-            {
-                latestRanking.Date = new DateTime(1992, 12, 1);
-                if(id != 1) {
-                    throw new ApplicationException("Brak rankingu id=" + id.ToString() + " na stronie FIFA", ex); ; // nie ma na stronie rankingu o danym id
+                var dateHtml = html.DocumentNode.SelectNodes("//div[@class='slider slider-mock ranking-browser']/div[@class='slider-wrap']/ul/li");
+                if (dateHtml == null && id == 1) // ranking o id = 1 nie ma daty na stronie FIFA
+                {
+                    latestRanking.Date = new DateTime(1992, 12, 1); // przyjmuje się datę 1 grudnia 1992
                 }
+                else
+                {
+                    var dateString = dateHtml.SingleOrDefault<HtmlNode>().InnerText;
+                    string[] dateTable = dateString.Split(' ');
+                    latestRanking.Date = new DateTime(Int32.Parse(dateTable[2]), DateTime.ParseExact(dateTable[1], "MMMM", CultureInfo.InvariantCulture).Month, Int32.Parse(dateTable[0]));
+                }
+            }
+            catch (Exception ex) 
+            {
+                 throw new ApplicationException("[GetRankingById] Problem z odczytem rankingu o id=" + id.ToString() + " ze strony FIFA", ex);
+               
             }
 
             // get team data
@@ -344,5 +353,25 @@ namespace Parser
                 throw new ApplicationException("Nie powiodło się updateWithLast. Sprawdź czy dane nie są już aktualne. " + ex.Message, ex);
             }
         }
+
+        private void DeleteFiles() // czyści foldery "rankings" i "teams"
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory;
+            System.IO.DirectoryInfo dirRankings = new DirectoryInfo(path + @"\data\rankings");
+            System.IO.DirectoryInfo dirTeams = new DirectoryInfo(path + @"\data\teams");
+
+            foreach (FileInfo file in dirRankings.GetFiles())
+            {
+                file.Delete();
+            }
+
+            foreach (FileInfo file in dirTeams.GetFiles())
+            {
+                file.Delete();
+            }
+        }
+
+        #endregion Private Methods
+
     }
 }
