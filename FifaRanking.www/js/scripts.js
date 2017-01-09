@@ -47,36 +47,26 @@ function initNavigationBar() {
     });
 }
 
+
 function adjustSVG(partial) {
-    var mainContentWrapperFACTORS = { smallHEIGHT: 0.75, smallWIDTH: 1, bigHEIGHT: 0.80, bigWIDTH: 1 };
+    var mainContentWrapperFACTORS = { smallHEIGHT: 0.5, smallWIDTH: 1, normalHEIGHT: 0.82, normalWIDTH: 1, hugeHEIGHT: 1.10, hugeWIDTH: 1 };
 
-    //switch(partial) {
-    //    case "chart":
-    //        mainContentWrapperFACTORS.smallHEIGHT = 0.75;
-    //        mainContentWrapperFACTORS.bigHEIGHT = 0.85;
-    //        break;
-    //    case "list":
-
-    //        break;
-    //    case "calculationMethod":
-    //        mainContentWrapperFACTORS.smallWIDTH = 0.75;
-    //        mainContentWrapperFACTORS.bigWIDTH = 0.6;
-    //        break;
-    //    case "schedule":
-
-    //        break;
-    //    default:
-    //        console.log("adjustMainContentWrapper unknown parameter: "+ partial);
-    //}
+    //console.log(mainContentWrapperFACTORS);
+    //console.log("window", window.innerHeight, window.innerWidth);
+    //console.log("main-content-wrapper", $("#main-content").parent().height(), $("#main-content").parent().width());
 
     // main-content-wrapper dimensions
     if (window.innerHeight < 550) { // mobile
         $("svg").attr("height", $("#main-content").parent().height() * mainContentWrapperFACTORS.smallHEIGHT);
         $("svg").attr("width", $("#main-content").parent().width() * mainContentWrapperFACTORS.smallWIDTH);
-    } else { // desktop
-        $("svg").attr("height", $("#main-content").parent().height() * mainContentWrapperFACTORS.bigHEIGHT);
-        $("svg").attr("width", $("#main-content").parent().width() * mainContentWrapperFACTORS.bigWIDTH);
+    } else if (window.innerHeight > 780) { // BIG desktop
+        $("svg").attr("height", $("#main-content").parent().height() * mainContentWrapperFACTORS.hugeHEIGHT);
+        $("svg").attr("width", $("#main-content").parent().width() * mainContentWrapperFACTORS.hugeWIDTH);
+    } else { // NORMAL desktop
+        $("svg").attr("height", $("#main-content").parent().height() * mainContentWrapperFACTORS.normalHEIGHT);
+        $("svg").attr("width", $("#main-content").parent().width() * mainContentWrapperFACTORS.normalWIDTH);
     }
+    console.log("svg", $("svg").attr("height"), $("svg").attr("width"));
 }
 
 function removeAds() {
