@@ -15,15 +15,20 @@ var Chart = (function () {
     var preparedData = {}; // contains 'teams' and 'data' ready for drawing SVG
 
     // init and load data for Poland
-    function initChart() {
+    function initChart(teamName) {
         deleteSVG();
         setTimeout(function () {
             removeAds();
         }, 400);
 
+        var teamId;
+
         $.getJSON('./data/teams/_teamsList.json', function (teamsArray) {
             // change 'Name' property to 'text' - select2 requirement
             for (var i = 0; i < teamsArray.length; i++) {
+                if (teamsArray[i]['Name'] == teamName) { // get team id
+                    teamId = i;
+                }
                 teamsArray[i].text = teamsArray[i]['Name'];
                 delete teamsArray[i].Name;
             }
@@ -32,18 +37,18 @@ var Chart = (function () {
                 data: teamsArray,
                 multiple: true,
             });
-            // ---------------------------------------------------------- START init for Poland
-            $("#sel-chart").val(151).trigger("change"); // id for Poland
+            // ---------------------------------------------------------- START init for 'teamName'
+            $("#sel-chart").val(teamId).trigger("change"); // id for Poland
 
-            teamsSelected = ["Poland"]; // array of selected teams names
+            teamsSelected = [teamName]; // array of selected teams names
             chartData = {}; // delete line if want saving svg after page changing
 
-            $.getJSON('./data/teams/' + 'Poland' + '.json', function (teamArray) {
-                chartData['Poland'] = teamArray;
+            $.getJSON('./data/teams/' + teamName + '.json', function (teamArray) {
+                chartData[teamName] = teamArray;
                 var preparedDataInit = prepareData(chartData);
                 drawSVG(preparedDataInit.teams, preparedDataInit.data);
             });
-            // ----------------------------------------------------------- END init for Poland
+            // ----------------------------------------------------------- END init for 'teamName'
 
             $('#sel-chart').on("change", function (event) {
                 var selectedValues = $('#sel-chart').val();
@@ -69,10 +74,6 @@ var Chart = (function () {
             });
 
             $("#btn-clearChart").on('click', function (event) {
-                //$("#sel-chart").each(function (a) {
-                //    console.log(this,a);
-                //    $(this).select2('val', '')
-                //});
                 $("#sel-chart").val('').change();
                 $("#sel-chart").select2('open');
                 deleteSVG();
@@ -217,9 +218,13 @@ var Chart = (function () {
 
     Chart.prototype.init = function (params) {
         var that = this;
+        // ******** Check navigation panel **************
+        if (!$($('#navigation-bar ul li')[0]).hasClass('active')) {
+            $('#navigation-bar ul li').removeClass("active");
+            $($('#navigation-bar ul li')[0]).addClass('active');
+        }
         // ******** ALL ACTION ON SITE GOES HERE *********
-
-        initChart();
+        initChart("Poland");
     }
 
     ///////////////////////////////////////////////////

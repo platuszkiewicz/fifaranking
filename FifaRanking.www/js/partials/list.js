@@ -1,10 +1,10 @@
-﻿// TODO: 
+﻿// TODO:
 // - fixedHeader
 // - clear searchBox
 // - prepare last id to initTable(id)
 
 var List = (function () {
-    // global variables - just reference as 'globalVariable_1' etc. 
+    // global variables - just reference as 'globalVariable_1' etc.
     var dataTable = null;
 
     var rankingDate = null;
@@ -13,18 +13,21 @@ var List = (function () {
 
     // global functions - just reference as 'func1()' etc.
     function initList() {
-
     }
 
-    function fillSelects_list(callbackOnlyOnInit) {
+    function fillSelects_list(callbackOnlyOnInit, rankingId) {
         // fill years
         $.getJSON('./data/rankings/_rankingsList.json', function (dataString) {
             // get year-data
             var years = [];
+            var rankingIdYear = -1;
             for (var i = 0; i < dataString.length; i++) {
                 var year = moment(dataString[i].Date).year();
                 if ($.inArray(year, years) == -1) {
                     years.push(year);
+                }
+                if (dataString[i].Id == rankingId) {
+                    rankingIdYear = moment(dataString[i].Date).year();
                 }
             }
             // fill year-select
@@ -35,7 +38,11 @@ var List = (function () {
                             .text(value));
             });
             // select year-select
-            $("#sel-year option:last").attr("selected", "selected");
+            if (rankingId) {
+                $("#sel-year").val(rankingIdYear);
+            } else {
+                $("#sel-year option:last").attr("selected", "selected");
+            }
 
             // on year change
             $('#sel-year').on('change', function () {
@@ -43,10 +50,10 @@ var List = (function () {
                             .remove()
                             .end()
                 ;
-                fillMonths(true);// on year change fill months and select first month
+                fillMonths(true, null);// on year change fill months and select first month
             });
 
-            fillMonths(false); // on initialization fill months and select lastmonth
+            fillMonths(false, rankingId); // on initialization fill months and select last ranking Id
 
             $('#sel-month').on("change", function () {
                 reloadTable($(this).val());
@@ -56,7 +63,7 @@ var List = (function () {
         });
     }
 
-    function fillMonths(selectFirst) { // if true - select first; if false - select last
+    function fillMonths(selectFirst, rankingId) { // @selectFirst: if true - select first; if false - select last
         $.getJSON('./data/rankings/_rankingsList.json', function (dataString) {
             var months = [];
             // get months-data available for year
@@ -82,7 +89,11 @@ var List = (function () {
             });
 
             // after initialization or year change select first/last month
-            selectFirst == true ? $("#sel-month")[0].selectedIndex = 0 : $("#sel-month option:last").attr("selected", "selected");
+            if (!rankingId) {
+                selectFirst == true ? $("#sel-month")[0].selectedIndex = 0 : $("#sel-month option:last").attr("selected", "selected");
+            } else {
+                $("#sel-month").val(rankingId);
+            }
             reloadTable($("#sel-month").val());  // and load data for this month
         });
     }
@@ -124,19 +135,33 @@ var List = (function () {
         }, null);
     }
 
-    // load other singletons. Other singleton contain some logic which can be packed, i.e. modal	
+    // load other singletons. Other singleton contain some logic which can be packed, i.e. modal
     function List() {
         //this.otherSingleton = new OtherSingleton();
     }
 
-    List.prototype.init = function (params) {
+    List.prototype.init = function (id) {
         var that = this;
-        // ******** ALL ACTION ON SITE GOES HERE *********
-        fillSelects_list(function () {
-            initTable(269); // imidately after init is reload, so...
-        });
-    }
+        // ******** Check navigation panel **************
+        if (!$($('#navigation-bar ul li')[1]).hasClass('active')) {
+            $('#navigation-bar ul li').removeClass("active");
+            $($('#navigation-bar ul li')[1]).addClass('active');
+        }
 
+        // ******** ALL ACTION ON SITE GOES HERE *********
+        if (!id) {
+            $.getJSON('./data/rankings/_rankingsList.json', function (data) {
+                var latestId = data[data.length - 1].Id;
+                fillSelects_list(function () {
+                    initTable(latestId); // imidately after init is reload, so...
+                }, latestId);
+            });
+        } else {
+            fillSelects_list(function () {
+                initTable(id); // imidately after init is reload, so...
+            }, id);
+        }
+    }
 
     ///////////////////////////////////////////////////
     // Singleton implementation ///////////////////////
@@ -154,6 +179,3 @@ var List = (function () {
 
     return _static;
 }());
-
-
-

@@ -43,10 +43,10 @@ function initNavigationBar() {
             setTimeout(function () {
                 removeAds();
             }, 400);
+            Schedule.getInstance().init(); // On Load
         });
     });
 }
-
 
 function adjustSVG(partial) {
     var mainContentWrapperFACTORS = { smallHEIGHT: 0.5, smallWIDTH: 1, normalHEIGHT: 0.82, normalWIDTH: 1, hugeHEIGHT: 1.10, hugeWIDTH: 1 };
