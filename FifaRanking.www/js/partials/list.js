@@ -11,6 +11,12 @@ var List = (function () {
 
     var lastRankingId = -1;
 
+    var LIST_PARAMS = {
+        id: null,
+        lastId: null,
+        isLastId: null
+    };
+
     // global functions - just reference as 'func1()' etc.
     function initList() {
     }
@@ -91,8 +97,12 @@ var List = (function () {
             // after initialization or year change select first/last month
             if (!rankingId) {
                 selectFirst == true ? $("#sel-month")[0].selectedIndex = 0 : $("#sel-month option:last").attr("selected", "selected");
+                LIST_PARAMS.id = $('#sel-month').val();
+                disableToggleOnLast();
             } else {
                 $("#sel-month").val(rankingId);
+                LIST_PARAMS.id = $('#sel-month').val();
+                disableToggleOnLast();
             }
             reloadTable($("#sel-month").val());  // and load data for this month
         });
@@ -143,8 +153,64 @@ var List = (function () {
         dataTable.ajax.url("data/rankings/" + id + ".json").load(function (jsonResponse) {
             rankingDate = moment(jsonResponse.Date).format("D MMMM YYYY");
             $('#list-name').text('Date of publication: ' + rankingDate);
-            console.log("reload table for id=" + id);
+            console.log("Reload table for id=" + id);
         }, null);
+    }
+
+    function setupListNavigation() {
+        disableToggleOnLast();
+        $('#btn-list-previous').click(function () {
+            LIST_PARAMS.id = Number(LIST_PARAMS.id) -1;
+            LIST_PARAMS.isLastId = false;
+            reloadTable(LIST_PARAMS.id);
+
+            if ($("#sel-month option:first")[0].selected == true) {
+                $('#sel-year option:selected').prev().attr('selected','selected');
+                fillMonths(false, LIST_PARAMS.id); // @selectFirst: if true - select first; if false - select last
+            } else {
+                $("#sel-month").val(Number($("#sel-month").val())-1);
+            }
+
+            disableToggleOnLast();
+        });
+
+        $('#btn-list-next').click(function () {
+            if (!LIST_PARAMS.isLastId) {
+                LIST_PARAMS.id = Number(LIST_PARAMS.id) + 1;
+                LIST_PARAMS.isLastId = LIST_PARAMS.lastId == LIST_PARAMS.id ? true : false;
+                reloadTable(LIST_PARAMS.id);
+
+                //if ($("#sel-month option:last")[0].selected == true) {
+                //    $("#sel-year option:last").attr("selected", 'selected');
+                //    fillMonths(false, LIST_PARAMS.id); // @selectFirst: if true - select first; if false - select last     
+                //} else {
+                //    $("#sel-month").val(Number($("#sel-month").val()) + 1);
+                //}
+
+                disableToggleOnLast();
+            }
+        });
+
+        $('#btn-list-last').click(function () {
+            if (!LIST_PARAMS.isLastId) {
+                reloadTable(LIST_PARAMS.lastId);
+
+                // przełaczenie select
+
+                disableToggleOnLast();
+            }
+        });
+    }
+
+    function disableToggleOnLast() {
+        LIST_PARAMS.isLastId = LIST_PARAMS.lastId == LIST_PARAMS.id ? true : false;
+        if (LIST_PARAMS.isLastId) {
+            $('#btn-list-next').attr("disabled", true);
+            $('#btn-list-last').attr("disabled", true);
+        } else {
+            $('#btn-list-next').attr("disabled", false);
+            $('#btn-list-last').attr("disabled", false);
+        }
     }
 
     // load other singletons. Other singleton contain some logic which can be packed, i.e. modal
@@ -154,25 +220,39 @@ var List = (function () {
 
     List.prototype.init = function (id) {
         var that = this;
+
         // ******** Check navigation panel **************
         if (!$($('#navigation-bar ul li')[1]).hasClass('active')) {
             $('#navigation-bar ul li').removeClass("active");
             $($('#navigation-bar ul li')[1]).addClass('active');
         }
 
-        // ******** ALL ACTION ON SITE GOES HERE *********
-        if (!id) {
-            $.getJSON('./data/rankings/_rankingsList.json', function (data) {
-                var latestId = data[data.length - 1].Id;
-                fillSelects_list(function () {
-                    initTable(latestId); // imidately after init is reload, so...
-                }, latestId);
-            });
-        } else {
+        $.getJSON('./data/rankings/_rankingsList.json', function (data) {
+            LIST_PARAMS.lastId = data[data.length - 1].Id;
+            LIST_PARAMS.id = id ? id : LIST_PARAMS.lastId;
+            LIST_PARAMS.isLastId = (LIST_PARAMS.id == LIST_PARAMS.lastId) ? true : false;
+
+            // ******** ALL ACTION ON SITE GOES HERE *********
             fillSelects_list(function () {
-                initTable(id); // imidately after init is reload, so...
-            }, id);
-        }
+                initTable(LIST_PARAMS.id); // imidately after init is reload, so...
+                setupListNavigation(LIST_PARAMS);
+            }, LIST_PARAMS.lastId);
+
+            //if (!id) { // open from navigation menu
+            //    $.getJSON('./data/rankings/_rankingsList.json', function (data) {
+            //        var latestId = data[data.length - 1].Id;
+            //        fillSelects_list(function () {
+            //            initTable(latestId); // imidately after init is reload, so...
+            //            setupListNavigation(latestId, true);
+            //        }, latestId);
+            //    });
+            //} else { // open from "schedule"
+            //    fillSelects_list(function () {
+            //        initTable(id); // imidately after init is reload, so...
+            //        setupListNavigation(id, isLastId(id));
+            //    }, id);
+            //}
+        });
     }
 
     ///////////////////////////////////////////////////
