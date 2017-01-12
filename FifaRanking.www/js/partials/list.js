@@ -52,10 +52,6 @@ var List = (function () {
 
             // on year change
             $('#sel-year').on('change', function () {
-                $('#sel-month').find('option')
-                            .remove()
-                            .end()
-                ;
                 fillMonths(true, null);// on year change fill months and select first month
             });
 
@@ -70,6 +66,14 @@ var List = (function () {
     }
 
     function fillMonths(selectFirst, rankingId) { // @selectFirst: if true - select first; if false - select last
+                                                  // @rankingId - initial selection for month
+                                                  // NOTE: function also reloads table
+                                                  // NOTE: function requires previously set year !
+        // delete all months in select
+        $('#sel-month').find('option') 
+            .remove()
+            .end()
+        ;
         $.getJSON('./data/rankings/_rankingsList.json', function (dataString) {
             var months = [];
             // get months-data available for year
@@ -93,13 +97,12 @@ var List = (function () {
                             .attr("value", value.id)
                             .text(value.month));
             });
-
-            // after initialization or year change select first/last month
-            if (!rankingId) {
-                selectFirst == true ? $("#sel-month")[0].selectedIndex = 0 : $("#sel-month option:last").attr("selected", "selected");
+            
+            if (!rankingId) { // after initialization or year change select first/last month
+                selectFirst == true ? $("#sel-month option:first").attr("selected", "selected"): $("#sel-month option:last").attr("selected", "selected");
                 LIST_PARAMS.id = $('#sel-month').val();
                 disableToggleOnLast();
-            } else {
+            } else { // set specific month 
                 $("#sel-month").val(rankingId);
                 LIST_PARAMS.id = $('#sel-month').val();
                 disableToggleOnLast();
@@ -109,7 +112,7 @@ var List = (function () {
     }
 
     function initTable(id) {
-        console.log("initTable for id=" + id);
+        console.log("InitTable for id=" + id);
         dataTable = $('#ranking-list').DataTable({
             search: true,
             info: false,
@@ -140,13 +143,6 @@ var List = (function () {
                 }
             ]
         });
-
-        // by default: table fill with newest ranking. Uncomment below to start with ranking with specific Id
-
-        //$.getJSON('./data/rankings/' + 198 + '.json', function (dataString) {
-        //    rankingDate = moment(dataString.Date).format("D MMMM YYYY");
-        //    $('#list-name').text('Date of publication: ' + rankingDate);
-        //});
     }
 
     function reloadTable(id) {
@@ -159,43 +155,46 @@ var List = (function () {
 
     function setupListNavigation() {
         disableToggleOnLast();
-        $('#btn-list-previous').click(function () {
-            LIST_PARAMS.id = Number(LIST_PARAMS.id) -1;
+        $('#btn-list-previous').click(function () { // ------------------ *** PREVIOUS
+            LIST_PARAMS.id = Number(LIST_PARAMS.id) - 1;
             LIST_PARAMS.isLastId = false;
-            reloadTable(LIST_PARAMS.id);
-
-            if ($("#sel-month option:first")[0].selected == true) {
-                $('#sel-year option:selected').prev().attr('selected','selected');
-                fillMonths(false, LIST_PARAMS.id); // @selectFirst: if true - select first; if false - select last
+            
+            if ($("#sel-month option:first")[0].selected == true) { // if first month in year
+                $('#sel-year option:selected').prev().prop('selected', 'selected'); // skip to previous year
+                fillMonths(false, LIST_PARAMS.id); // and select last month, reload table
             } else {
-                $("#sel-month").val(Number($("#sel-month").val())-1);
+                reloadTable(LIST_PARAMS.id);
+                $("#sel-month").val(Number($("#sel-month").val()) -1);
             }
 
             disableToggleOnLast();
         });
 
-        $('#btn-list-next').click(function () {
+        $('#btn-list-next').click(function () { // --------------------- *** NEXT
             if (!LIST_PARAMS.isLastId) {
                 LIST_PARAMS.id = Number(LIST_PARAMS.id) + 1;
                 LIST_PARAMS.isLastId = LIST_PARAMS.lastId == LIST_PARAMS.id ? true : false;
-                reloadTable(LIST_PARAMS.id);
 
-                //if ($("#sel-month option:last")[0].selected == true) {
-                //    $("#sel-year option:last").attr("selected", 'selected');
-                //    fillMonths(false, LIST_PARAMS.id); // @selectFirst: if true - select first; if false - select last     
-                //} else {
-                //    $("#sel-month").val(Number($("#sel-month").val()) + 1);
-                //}
+                if ($("#sel-month option:last")[0].selected == true) { // if last month in year
+                    $('#sel-year option:selected').next().prop('selected', 'selected'); // skip to next year
+                    fillMonths(true, LIST_PARAMS.id); // and select first month, reload table
+                } else {
+                    reloadTable(LIST_PARAMS.id);
+                    $("#sel-month").val(Number($("#sel-month").val()) + 1);
+
+                }
 
                 disableToggleOnLast();
             }
         });
 
-        $('#btn-list-last').click(function () {
+        $('#btn-list-last').click(function () { // ------------------ *** LAST
             if (!LIST_PARAMS.isLastId) {
-                reloadTable(LIST_PARAMS.lastId);
+                LIST_PARAMS.id = LIST_PARAMS.lastId;
+                LIST_PARAMS.isLastId = true;
 
-                // przełaczenie select
+                $('#sel-year option:last').prop('selected', 'selected'); // skip to last year
+                fillMonths(false, LIST_PARAMS.lastId);
 
                 disableToggleOnLast();
             }
