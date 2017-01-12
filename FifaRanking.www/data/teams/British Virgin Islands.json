@@ -1846,5 +1846,13 @@
     "MovePosition": 0,
     "Date": "2016-12-22T00:00:00",
     "RankId": 269
+  },
+  {
+    "Rank": 204,
+    "TotalPoints": 10.62,
+    "PreviousPoints": 11,
+    "MovePosition": 0,
+    "Date": "2017-01-12T00:00:00",
+    "RankId": 270
   }
 ]

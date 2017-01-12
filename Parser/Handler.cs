@@ -40,7 +40,7 @@ namespace Parser
                         break;
 
                     case "updateWithLast":
-                        UpdateWithLast();
+                        result = UpdateWithLast();
                         break;
                 }
 
@@ -161,6 +161,7 @@ namespace Parser
                     team.TotalPoints = Double.Parse(row.SelectNodes(".//td[@class='tbl-points']").SingleOrDefault<HtmlNode>().InnerText.Split('(', ')')[1], System.Globalization.CultureInfo.InvariantCulture);
                     team.PreviousPoints = Int32.Parse(row.SelectNodes(".//td[@class='tbl-prevpoints']").SingleOrDefault<HtmlNode>().InnerText);
                     team.MovePosition = Int32.Parse(row.SelectNodes(".//td[@class='tbl-prevrank']").SingleOrDefault<HtmlNode>().InnerText);
+                    team.FlagUrl = (row.SelectNodes(".//td[@class='tbl-teamname']").SingleOrDefault<HtmlNode>().FirstChild.FirstChild.Attributes[2].Value);
                     latestRanking.PutTeam(team);
                 }
             }
@@ -200,13 +201,17 @@ namespace Parser
                             }
                             System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", output);
                         }
-                        else // plik nie istnieje - zrób nowy
+                        else // plik nie istnieje - zrób nowy i pobierz flagę
                         {
                             List<TeamInFile> initialList = new List<TeamInFile>(); // lista z tylko jednym wpisem
                             initialList.Add(teamInFile);
                             string json = JsonConvert.SerializeObject(initialList, Newtonsoft.Json.Formatting.Indented);
 
                             System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", json);
+
+                            using (var client = new WebClient()) {
+                                client.DownloadFile(teamInRank.FlagUrl, path + "/data/flags/" + teamInRank.Name + ".png");
+                            }
                         }
                     }
                 }
@@ -270,7 +275,7 @@ namespace Parser
             System.IO.File.WriteAllText(path + "data/teams/_teamsList.json", json);
         }
 
-        private void UpdateWithLast() // aktualizacja najnowszym rankingiem
+        private string UpdateWithLast() // aktualizacja najnowszym rankingiem
         {
             // wyznacz ostatnie Id
             string path = AppDomain.CurrentDomain.BaseDirectory;
@@ -302,7 +307,7 @@ namespace Parser
                 // #########################
                 string json2 = JsonConvert.SerializeObject(lastRanking);
                 var rankingForList = new RankingInList() { Id = lastRanking.Id, Date = lastRanking.Date };
-                System.IO.File.WriteAllText(path + "data/rankings/" + lastIdInFiles + ".json", json2);
+                System.IO.File.WriteAllText(path + "data/rankings/" + (lastIdInFiles+1) + ".json", json2);
 
                 // ######################### dopisz do każdej drużyny najnowszy ranking. Sprowadza się to do CreateTeamFiles() tyle że bez pętli
                 // #########################
@@ -328,15 +333,19 @@ namespace Parser
                             items.Add(teamInFile);
                             outputTeam = Newtonsoft.Json.JsonConvert.SerializeObject(items, Newtonsoft.Json.Formatting.Indented);
                         }
-                        System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", output);
+                        System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", outputTeam);
                     }
-                    else // plik nie istnieje - zrób nowy (doszła w najnowszym rankingu jakaś nowa drużyna)
+                    else // plik nie istnieje - zrób nowy (doszła w najnowszym rankingu jakaś nowa drużyna) i weź flagę
                     {
                         List<TeamInFile> initialList = new List<TeamInFile>(); // lista z tylko jednym wpisem
                         initialList.Add(teamInFile);
                         string json = JsonConvert.SerializeObject(initialList, Newtonsoft.Json.Formatting.Indented);
 
                         System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", json);
+
+                        using (var client = new WebClient()) {
+                            client.DownloadFile(teamInRank.FlagUrl, path + "/data/flags/" + teamInRank.Name + ".png");
+                        }
                     }
                 }
 
@@ -346,19 +355,21 @@ namespace Parser
                 {
                     File.Delete(path + "data/teams/_teamsList.json");
                     CreateTeamList();
-                }
+                }                
             }
             catch (Exception ex) // nie ma rankingu o takim Id
             {
                 throw new ApplicationException("Nie powiodło się updateWithLast. Sprawdź czy dane nie są już aktualne. " + ex.Message, ex);
             }
+            return "[updateWithLast] zakończono powodzeniem";
         }
 
-        private void DeleteFiles() // czyści foldery "rankings" i "teams"
+        private void DeleteFiles() // czyści foldery "rankings", "teams" i "flags"
         {
             string path = AppDomain.CurrentDomain.BaseDirectory;
             System.IO.DirectoryInfo dirRankings = new DirectoryInfo(path + @"\data\rankings");
             System.IO.DirectoryInfo dirTeams = new DirectoryInfo(path + @"\data\teams");
+            System.IO.DirectoryInfo dirFlags = new DirectoryInfo(path + @"\data\flags");
 
             foreach (FileInfo file in dirRankings.GetFiles())
             {
@@ -367,6 +378,10 @@ namespace Parser
 
             foreach (FileInfo file in dirTeams.GetFiles())
             {
+                file.Delete();
+            }
+
+            foreach (FileInfo file in dirFlags.GetFiles()) {
                 file.Delete();
             }
         }

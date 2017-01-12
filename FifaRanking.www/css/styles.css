@@ -68,3 +68,17 @@ p{
     text-align: justify;
 }
 /*#endregion*/
+
+/*#region LIST*/
+.flag{
+    height: 20px;
+    width: 36px;
+    margin-right: 4px;
+}
+
+.arrow {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+/*#endregion*/
