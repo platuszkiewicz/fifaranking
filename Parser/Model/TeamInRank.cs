@@ -9,5 +9,6 @@ namespace Parser.Model
         public double TotalPoints { get; set; }
         public int PreviousPoints { get; set; }
         public int MovePosition { get; set; }
+        public string FlagUrl { get; set; }
     }
 }

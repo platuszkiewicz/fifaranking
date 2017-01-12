@@ -112,10 +112,22 @@ var List = (function () {
             },
             columns: [
                 { "data": "Rank" },
-                { "data": "Name" },
+                { "data": "Name", render(data) { return '<img src="data/flags/' + data + '.png" class="flag">' + data; } },
                 { "data": "TotalPoints", "orderable": false },
                 { "data": "PreviousPoints", "orderable": false },
-                { "data": "MovePosition" },
+                {
+                    "data": "MovePosition", render(data) {
+                        var html;
+                        if (data > 0) {
+                            html = '<img src="ico/128_green_up.png" class="arrow">' + '+' + data;
+                        } else if (data < 0) {
+                            html = '<img src="ico/128_red_down.png" class="arrow">' + data;//+ '–' + data * (-1);
+                        } else {
+                            html = data;
+                        }
+                        return html;
+                    },
+                }
             ]
         });
 

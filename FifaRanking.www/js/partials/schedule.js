@@ -20,7 +20,6 @@
         var $ul = $('ul.list-group');
         $.each(data, function (idx, val) {
             var $li = new $('<li>');
-            console.log(val.date, moment());
             if (val.date > moment()) { // ----------------------------------------------future
                 $li.text(moment(val.date).format('D') + ' ' + moment(val.date).format('MMMM'));
             } else {                   // ----------------------------------------------past

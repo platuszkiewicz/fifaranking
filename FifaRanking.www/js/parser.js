@@ -1,13 +1,12 @@
 ﻿$(document).ready(function () {
     // *** *** *** Uncomment to recalculate all (rankings, teams) *** *** ***
-    //recaluculateAll();
+    // recalculateAll();
 
     // *** *** *** Uncomment to update with last ranking (rankings, teams) *** *** ***
-    //updateWithLast();
-
+    // updateWithLast();
 });
 
-function recaluculateAll() {
+function recalculateAll() {
     $.ajax({
         url: "/parser?action=recalculateAll",
         type: "POST",
