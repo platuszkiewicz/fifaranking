@@ -14,7 +14,7 @@ var Chart = (function () {
 
     var preparedData = {}; // contains 'teams' and 'data' ready for drawing SVG
 
-    // init and load data for Poland
+    // init and load data for 'teamName'
     function initChart(teamName) {
         deleteSVG();
 
@@ -34,8 +34,16 @@ var Chart = (function () {
                 data: teamsArray,
                 multiple: true,
             });
+
+            $("select").on("select2:unselect", function (evt) { // disable showing dropdown after removing a team from select2 (https://github.com/select2/select2/issues/3209)
+                if (!evt.params.originalEvent) {
+                    return;
+                }
+
+                evt.params.originalEvent.stopPropagation();
+            });
             // ---------------------------------------------------------- START init for 'teamName'
-            $("#sel-chart").val(teamId).trigger("change"); // id for Poland
+            $("#sel-chart").val(teamId).trigger("change"); // id for 'teamName'
 
             teamsSelected = [teamName]; // array of selected teams names
             chartData = {}; // delete line if want saving svg after page changing

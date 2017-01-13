@@ -12,6 +12,10 @@
         padding-right: 0px;
     }
 }
+button:focus {
+  outline: none !important;
+  background-color:#ffffff!important; 
+}
 /*#region CHART*/
 @media only screen and (max-device-width: 700px) {
     #main-content {
