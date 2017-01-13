@@ -6,8 +6,19 @@
     min-height: 85%;
     min-width: 80%;
 }
+@media only screen and (max-device-width: 700px) {
+    #main-content-wrapper {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
 /*#region CHART*/
-
+@media only screen and (max-device-width: 700px) {
+    #main-content {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
 /*svg style*/
     .axis path,
     .axis line {
@@ -81,4 +92,27 @@ p{
     width: 20px;
     margin-right: 10px;
 }
+
+.team-in-list{
+    display: inline;
+    cursor: pointer;
+}
+
+.team-in-list:hover{
+    text-decoration:underline;
+    color: rgb(168, 162, 162);
+}
+
+@media only screen and (max-device-width: 700px) {
+    .list-form{
+        display: table!important; 
+        margin: 0 auto!important; 
+        width: 75%!important;
+    }
+
+    .list-buttons{
+        text-align: center!important;
+    }
+}
+
 /*#endregion*/

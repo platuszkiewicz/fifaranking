@@ -125,7 +125,7 @@ var List = (function () {
             },
             columns: [
                 { "data": "Rank" },
-                { "data": "Name", render(data) { return '<img src="data/flags/' + data + '.png" class="flag">' + data; } },
+                { "data": "Name", render(data) { return '<img src="data/flags/' + data + '.png" class="flag"><p class="team-in-list">' + data+'</p>'; } },
                 { "data": "TotalPoints", "orderable": false },
                 { "data": "PreviousPoints", "orderable": false },
                 {
@@ -142,6 +142,17 @@ var List = (function () {
                     },
                 }
             ]
+        });
+
+        $('#ranking-list tbody').on('click', 'tr', function () { // append click to team name
+            var data = dataTable.row(this).data();
+            $("#main-content").load("./partials/chart.html", null, function () {
+                adjustSVG();
+                setTimeout(function () {
+                    removeAds();
+                }, 400);
+                Chart.getInstance().init(data.Name);
+            });
         });
     }
 

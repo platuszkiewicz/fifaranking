@@ -17,9 +17,6 @@ var Chart = (function () {
     // init and load data for Poland
     function initChart(teamName) {
         deleteSVG();
-        setTimeout(function () {
-            removeAds();
-        }, 400);
 
         var teamId;
 
@@ -131,7 +128,8 @@ var Chart = (function () {
 
     // draws SVG basing on 'preparedData'
     function drawSVG(teams, data) {
-        $('#main-content').find('svg')[0].innerHTML = '';
+        //$('#main-content').find('svg')[0].innerHTML = '';
+        deleteSVG();
 
         for (var i = 0; i < data.length; i++) {
             var obj = data[i];
@@ -207,8 +205,8 @@ var Chart = (function () {
     }
 
     function deleteSVG() {
-        $('#main-content').find('svg')[0].innerHTML = "";
-        d3.selectAll("svg > *").remove();
+            $('#main-content').find('svg')[0].innerHTML = "";
+            d3.selectAll("svg > *").remove();
     }
 
     // load other singletons. Other singleton contain some logic which can be packed, i.e. modal
@@ -216,7 +214,7 @@ var Chart = (function () {
         //this.otherSingleton = new OtherSingleton();
     }
 
-    Chart.prototype.init = function (params) {
+    Chart.prototype.init = function (teamName) {
         var that = this;
         // ******** Check navigation panel **************
         if (!$($('#navigation-bar ul li')[0]).hasClass('active')) {
@@ -224,7 +222,7 @@ var Chart = (function () {
             $($('#navigation-bar ul li')[0]).addClass('active');
         }
         // ******** ALL ACTION ON SITE GOES HERE *********
-        initChart("Poland");
+        initChart(teamName);
     }
 
     ///////////////////////////////////////////////////
