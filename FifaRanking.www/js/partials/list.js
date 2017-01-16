@@ -52,12 +52,14 @@ var List = (function () {
 
             // on year change
             $('#sel-year').on('change', function () {
-                fillMonths(true, null);// on year change fill months and select first month
+                fillMonths(true, null, true);// on year change fill months and select first month
             });
 
-            fillMonths(false, rankingId); // on initialization fill months and select last ranking Id
+            fillMonths(false, rankingId, false); // on initialization fill months and select last ranking Id
 
             $('#sel-month').on("change", function () {
+                LIST_PARAMS.id = $(this).val();
+                LIST_PARAMS.isLastId = LIST_PARAMS.lastId == LIST_PARAMS.id ? true : false;
                 reloadTable($(this).val());
             });
 
@@ -65,10 +67,10 @@ var List = (function () {
         });
     }
 
-    function fillMonths(selectFirst, rankingId) { // @selectFirst: if true - select first; if false - select last
-                                                  // @rankingId - initial selection for month
-                                                  // NOTE: function also reloads table
-                                                  // NOTE: function requires previously set year !
+    function fillMonths(selectFirst, rankingId, withReloadTable ) {   // @selectFirst: if true - select first; if false - select last
+                                                                      // @rankingId - initial selection for month
+                                                                      // @withReloadTable - function also reloads table
+                                                                      // NOTE: function requires previously set year !
         // delete all months in select
         $('#sel-month').find('option') 
             .remove()
@@ -107,11 +109,13 @@ var List = (function () {
                 LIST_PARAMS.id = $('#sel-month').val();
                 disableToggleOnLast();
             }
-            reloadTable($("#sel-month").val());  // and load data for this month
+            if (withReloadTable) {
+                reloadTable($("#sel-month").val());  // and load data for this month
+            }
         });
     }
 
-    function initTable(id) {
+    function initTable(id, rankingDate) {
         console.log("InitTable for id=" + id);
         dataTable = $('#ranking-list').DataTable({
             search: true,
@@ -123,6 +127,11 @@ var List = (function () {
                 "url": "data/rankings/" + id + ".json",
                 "dataSrc": "Teams"
             },
+            "dom": 'rtip', // the "r" is for the "processing" message
+            "language": {
+                "processing": "<span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>"
+            }, // you can put text or html here in the language.processing setting.
+            "processing": true, // you have to set this to true as well
             columns: [
                 { "data": "Rank" },
                 { "data": "Name", render(data) { return '<img src="data/flags/' + data + '.png" class="flag"><p class="team-in-list">' + data+'</p>'; } },
@@ -144,6 +153,8 @@ var List = (function () {
             ]
         });
 
+        $('#list-name').text('Date of publication: ' + rankingDate);
+
         $('#ranking-list tbody').on('click', 'tr', function () { // append click to team name
             var data = dataTable.row(this).data();
             $("#main-content").load("./partials/chart.html", null, function () {
@@ -154,12 +165,19 @@ var List = (function () {
                 Chart.getInstance().init(data.Name);
             });
         });
+
+        if (mobileCheck()||window.innerWidth<600) { // if mobile hide column "PreviousPoints"
+            dataTable.column(3).visible(false);
+        }
+
     }
 
     function reloadTable(id) {
+        $('#main-content-wrapper').addClass('loading');
         dataTable.ajax.url("data/rankings/" + id + ".json").load(function (jsonResponse) {
             rankingDate = moment(jsonResponse.Date).format("D MMMM YYYY");
             $('#list-name').text('Date of publication: ' + rankingDate);
+            $('#main-content-wrapper').removeClass('loading');
             console.log("Reload table for id=" + id);
         }, null);
     }
@@ -172,7 +190,7 @@ var List = (function () {
             
             if ($("#sel-month option:first")[0].selected == true) { // if first month in year
                 $('#sel-year option:selected').prev().prop('selected', 'selected'); // skip to previous year
-                fillMonths(false, LIST_PARAMS.id); // and select last month, reload table
+                fillMonths(false, LIST_PARAMS.id, true); // and select last month, reload table
             } else {
                 reloadTable(LIST_PARAMS.id);
                 $("#sel-month").val(Number($("#sel-month").val()) -1);
@@ -188,7 +206,7 @@ var List = (function () {
 
                 if ($("#sel-month option:last")[0].selected == true) { // if last month in year
                     $('#sel-year option:selected').next().prop('selected', 'selected'); // skip to next year
-                    fillMonths(true, LIST_PARAMS.id); // and select first month, reload table
+                    fillMonths(true, LIST_PARAMS.id, true); // and select first month, reload table
                 } else {
                     reloadTable(LIST_PARAMS.id);
                     $("#sel-month").val(Number($("#sel-month").val()) + 1);
@@ -205,7 +223,7 @@ var List = (function () {
                 LIST_PARAMS.isLastId = true;
 
                 $('#sel-year option:last').prop('selected', 'selected'); // skip to last year
-                fillMonths(false, LIST_PARAMS.lastId);
+                fillMonths(false, LIST_PARAMS.lastId, true);
 
                 disableToggleOnLast();
             }
@@ -237,6 +255,7 @@ var List = (function () {
             $($('#navigation-bar ul li')[1]).addClass('active');
         }
 
+        // ******** Set params ***********
         $.getJSON('./data/rankings/_rankingsList.json', function (data) {
             LIST_PARAMS.lastId = data[data.length - 1].Id;
             LIST_PARAMS.id = id ? id : LIST_PARAMS.lastId;
@@ -244,24 +263,10 @@ var List = (function () {
 
             // ******** ALL ACTION ON SITE GOES HERE *********
             fillSelects_list(function () {
-                initTable(LIST_PARAMS.id); // imidately after init is reload, so...
+                var rankingDate = moment(data[LIST_PARAMS.id - 1].Date).format("D MMMM YYYY");
+                initTable(LIST_PARAMS.id, rankingDate); // imidately after init is reload, so...
                 setupListNavigation(LIST_PARAMS);
             }, LIST_PARAMS.lastId);
-
-            //if (!id) { // open from navigation menu
-            //    $.getJSON('./data/rankings/_rankingsList.json', function (data) {
-            //        var latestId = data[data.length - 1].Id;
-            //        fillSelects_list(function () {
-            //            initTable(latestId); // imidately after init is reload, so...
-            //            setupListNavigation(latestId, true);
-            //        }, latestId);
-            //    });
-            //} else { // open from "schedule"
-            //    fillSelects_list(function () {
-            //        initTable(id); // imidately after init is reload, so...
-            //        setupListNavigation(id, isLastId(id));
-            //    }, id);
-            //}
         });
     }
 
