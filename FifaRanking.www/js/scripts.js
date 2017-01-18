@@ -52,6 +52,14 @@ function initNavigationBar() {
             Schedule.getInstance().init(); // On Load
         });
     });
+    $('#examples-btn').on('click', function () {
+        $("#main-content").load("./partials/examples.html", null, function () {
+            setTimeout(function () {
+                removeAds();
+            }, 400);
+            Examples.getInstance().init(); // On Load
+        });
+    });
 }
 
 function adjustSVG(partial) {
