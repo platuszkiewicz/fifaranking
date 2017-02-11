@@ -5,6 +5,82 @@
     <meta charset="utf-8" />
 </head>
 <body>
+    <div id="carosuel-content" class="carousel slide" data-interval="false">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carosuel-content" data-slide-to="0" class="active"></li>
+            <li data-target="#carosuel-content" data-slide-to="1"></li>
+            <li data-target="#carosuel-content" data-slide-to="2"></li>
+            <li data-target="#carosuel-content" data-slide-to="3"></li>
+        </ol>
 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide 1-->
+            <div class="item active">
+                <img class="d-block img-fluid" src="../data/img/germany_brazil.svg" alt="Slide 1" />
+                <div class="carousel-caption">
+                    <h1>Hosts of The World Cup Tournament</h1>
+                    <p>
+                        It is common that host of The World Cup tournament always has low number of ranking points in one-year
+                        period preceding this event.The World Cup finals were hosted in 2006 by Germany and in 2010 by Brazil.
+
+                    </p>
+                </div>
+            </div>
+
+            <!-- Slide 2-->
+            <div class="item">
+                <img class="d-block img-fluid" src="../data/img/japan_korea2.svg" alt="Slide 2" />
+                <div class="carousel-caption">
+                    <h1>Japan and Korea Republic</h1>
+                    <p>Position in ranking of these two Asian teams is interestingly correlated. And I don't know what is the reason.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3-->
+            <div class="item">
+                <img class="d-block img-fluid" src="../data/img/poland_italy.svg" alt="Slide 3" />
+                <div class="carousel-caption">
+                    <h1>Poland and Italy</h1>
+                    <p>After 2016 Euro Championship, Poland finally has beaten Italy!</p>
+                </div>
+            </div>
+
+            <!-- Slide 4-->
+            <div class="item">
+                <img class="d-block img-fluid" src="../data/img/yugoslavia.svg" alt="Slide 3" />
+                <div class="carousel-caption">
+                    <h1>Yugoslavia and heritage</h1>
+                    <p>
+                        That's how were ranked countries after Yugoslavia was divided.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Slide 5-->
+            <div class="item">
+                <img class="d-block img-fluid" src="../data/img/wales.svg" alt="Slide 3" />
+                <div class="carousel-caption">
+                    <h1>Wales</h1>
+                    <p>
+                        This team had impressive progress in years 2012-2016. In the middle of 2011 Wales has been ranked at 113 position,
+                        and five years later has advanced on 10th postion. The reason is playing only five
+                        friendly matches in years 2013-2015 and excellect results in EURO 2016 qualifiers and final tournament.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carosuel-content" data-slide="prev" onclick="this.blur();">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#carosuel-content" data-slide="next" onclick="this.blur();">
+            <span class="icon-next"></span>
+        </a>
+    </div>
 </body>
 </html>

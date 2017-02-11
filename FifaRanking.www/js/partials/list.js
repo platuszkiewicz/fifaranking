@@ -127,7 +127,7 @@ var List = (function () {
                 "url": "data/rankings/" + id + ".json",
                 "dataSrc": "Teams"
             },
-            "dom": 'rtip', // the "r" is for the "processing" message
+            "dom": 'rlfrtip', // the "r" is for the "processing" message
             "language": {
                 "processing": "<span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>"
             }, // you can put text or html here in the language.processing setting.

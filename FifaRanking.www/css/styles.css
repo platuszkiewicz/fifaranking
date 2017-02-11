@@ -152,3 +152,56 @@ span.glyphicon-refresh {
 top: 25%!important;  /*override for small devices; normal is 50%*/
 }
 /*#endregion*/
+
+/*#region EXAMPLES*/
+/*powinno top byæ przeliczane wbr zaleznosci body wysokosci dostepnej przestrzeni; choæ mo¿e jednak nie*/
+#carosuel-content img{
+    width: 960px;
+    margin: 0 auto;
+    padding-bottom: 150px;
+}
+
+.carousel-control.left {
+    background-image:none;
+}
+.carousel-control.right {
+    background-image:none;
+}
+
+.carousel-control .glyphicon,
+.carousel-control .icon-prev,
+.carousel-control .icon-next {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: -70px;
+  margin-left: -10px;
+  font-family: serif;
+  font-size: 80px;
+  color: grey;
+}
+
+.carousel-control .icon-prev:before {
+  content: '\2039';
+}
+
+.carousel-control .icon-next:before {
+  content: '\203a';
+}
+
+.carousel-caption h1 
+{
+    color: #333;
+    text-shadow: none;
+}
+.carousel-caption p 
+{
+    color: #333;
+    text-shadow: none;
+}
+
+/*#endregion*/
