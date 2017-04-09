@@ -590,5 +590,21 @@
     "MovePosition": 2,
     "Date": "2017-02-09T00:00:00",
     "RankId": 271
+  },
+  {
+    "Rank": 74,
+    "TotalPoints": 466.63,
+    "PreviousPoints": 467,
+    "MovePosition": -1,
+    "Date": "2017-03-09T00:00:00",
+    "RankId": 272
+  },
+  {
+    "Rank": 70,
+    "TotalPoints": 491.93,
+    "PreviousPoints": 467,
+    "MovePosition": 4,
+    "Date": "2017-04-06T00:00:00",
+    "RankId": 273
   }
 ]

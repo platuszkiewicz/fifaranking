@@ -195,7 +195,7 @@ var List = (function () {
                 reloadTable(LIST_PARAMS.id);
                 $("#sel-month").val(Number($("#sel-month").val()) -1);
             }
-
+            $("#btn-list-previous").blur();
             disableToggleOnLast();
         });
 
@@ -212,7 +212,7 @@ var List = (function () {
                     $("#sel-month").val(Number($("#sel-month").val()) + 1);
 
                 }
-
+                $("#btn-list-next").blur();
                 disableToggleOnLast();
             }
         });
@@ -225,6 +225,7 @@ var List = (function () {
                 $('#sel-year option:last').prop('selected', 'selected'); // skip to last year
                 fillMonths(false, LIST_PARAMS.lastId, true);
 
+                $("#btn-list-last").blur();
                 disableToggleOnLast();
             }
         });
@@ -266,7 +267,7 @@ var List = (function () {
                 var rankingDate = moment(data[LIST_PARAMS.id - 1].Date).format("D MMMM YYYY");
                 initTable(LIST_PARAMS.id, rankingDate); // imidately after init is reload, so...
                 setupListNavigation(LIST_PARAMS);
-            }, LIST_PARAMS.lastId);
+            }, LIST_PARAMS.id);
         });
     }
 
