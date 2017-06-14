@@ -1,5 +1,8 @@
 ﻿$(document).ready(function () {
-    initNavigationBar();
+    setTimeout(function () {
+        initNavigationBar();
+
+    },100);
 });
 
 function initNavigationBar() {
