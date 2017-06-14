@@ -300,6 +300,7 @@ namespace Parser
                     List<RankingInList> items = JsonConvert.DeserializeObject<List<RankingInList>>(json);
                     items.Add(new RankingInList { Id = lastRanking.Id, Date = lastRanking.Date });
                     output = Newtonsoft.Json.JsonConvert.SerializeObject(items, Newtonsoft.Json.Formatting.Indented);
+                    r.Close();
                 }
                 System.IO.File.WriteAllText(path + "/data/rankings/_rankingsList.json", output);
 
