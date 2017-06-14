@@ -53,6 +53,7 @@ var List = (function () {
             // on year change
             $('#sel-year').on('change', function () {
                 fillMonths(true, null, true);// on year change fill months and select first month
+                $(this).blur();
             });
 
             fillMonths(false, rankingId, false); // on initialization fill months and select last ranking Id
@@ -61,6 +62,7 @@ var List = (function () {
                 LIST_PARAMS.id = $(this).val();
                 LIST_PARAMS.isLastId = LIST_PARAMS.lastId == LIST_PARAMS.id ? true : false;
                 reloadTable($(this).val());
+                $(this).blur();
             });
 
             callbackOnlyOnInit();
