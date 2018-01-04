@@ -2198,5 +2198,53 @@
     "MovePosition": 2,
     "Date": "2017-06-01T00:00:00",
     "RankId": 275
+  },
+  {
+    "Rank": 39,
+    "TotalPoints": 714.68,
+    "PreviousPoints": 730,
+    "MovePosition": -1,
+    "Date": "2017-07-06T00:00:00",
+    "RankId": 276
+  },
+  {
+    "Rank": 38,
+    "TotalPoints": 716.28,
+    "PreviousPoints": 715,
+    "MovePosition": 1,
+    "Date": "2017-08-10T00:00:00",
+    "RankId": 277
+  },
+  {
+    "Rank": 44,
+    "TotalPoints": 696.39,
+    "PreviousPoints": 716,
+    "MovePosition": -6,
+    "Date": "2017-09-14T00:00:00",
+    "RankId": 278
+  },
+  {
+    "Rank": 41,
+    "TotalPoints": 720.92,
+    "PreviousPoints": 696,
+    "MovePosition": 3,
+    "Date": "2017-10-16T00:00:00",
+    "RankId": 279
+  },
+  {
+    "Rank": 50,
+    "TotalPoints": 671.07,
+    "PreviousPoints": 721,
+    "MovePosition": -9,
+    "Date": "2017-11-23T00:00:00",
+    "RankId": 280
+  },
+  {
+    "Rank": 51,
+    "TotalPoints": 639.67,
+    "PreviousPoints": 671,
+    "MovePosition": -1,
+    "Date": "2017-12-21T00:00:00",
+    "RankId": 281
   }
 ]

@@ -161,7 +161,7 @@ namespace Parser
                     team.TotalPoints = Double.Parse(row.SelectNodes(".//td[@class='tbl-points']").SingleOrDefault<HtmlNode>().InnerText.Split('(', ')')[1], System.Globalization.CultureInfo.InvariantCulture);
                     team.PreviousPoints = Int32.Parse(row.SelectNodes(".//td[@class='tbl-prevpoints']").SingleOrDefault<HtmlNode>().InnerText);
                     team.MovePosition = Int32.Parse(row.SelectNodes(".//td[@class='tbl-prevrank']").SingleOrDefault<HtmlNode>().InnerText);
-                    team.FlagUrl = (row.SelectNodes(".//td[@class='tbl-teamname']").SingleOrDefault<HtmlNode>().FirstChild.FirstChild.Attributes[2].Value);
+                    team.FlagUrl = "http:" + (row.SelectNodes(".//td[@class='tbl-teamname']").SingleOrDefault<HtmlNode>().FirstChild.FirstChild.Attributes[2].Value);
                     latestRanking.PutTeam(team);
                 }
             }
@@ -209,8 +209,8 @@ namespace Parser
 
                             System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", json);
 
-                            using (var client = new WebClient()) {
-                                client.DownloadFile(teamInRank.FlagUrl, path + "/data/flags/" + teamInRank.Name + ".png");
+                            using (var client = new WebClient()){
+                                client.DownloadFile(teamInRank.FlagUrl, path + "data/flags/" + teamInRank.Name + ".png");
                             }
                         }
                     }
@@ -345,7 +345,7 @@ namespace Parser
                         System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", json);
 
                         using (var client = new WebClient()) {
-                            client.DownloadFile(teamInRank.FlagUrl, path + "/data/flags/" + teamInRank.Name + ".png");
+                            client.DownloadFile(teamInRank.FlagUrl, path + "data/flags/" + teamInRank.Name + ".png");
                         }
                     }
                 }

@@ -1,18 +1,18 @@
 ﻿var Schedule = (function () {
     // global variables - just reference as 'globalVariable_1' etc.
     var DATA = [
-        { id: 270, date: moment(new Date(2017, 0, 12)) },
-        { id: 271, date: moment(new Date(2017, 1, 9)) },
-        { id: 272, date: moment(new Date(2017, 2, 9)) },
-        { id: 273, date: moment(new Date(2017, 3, 6)) },
-        { id: 274, date: moment(new Date(2017, 4, 4)) },
-        { id: 275, date: moment(new Date(2017, 5, 1)) },
-        { id: 276, date: moment(new Date(2017, 6, 6)) },
-        { id: 277, date: moment(new Date(2017, 7, 10)) },
-        { id: 278, date: moment(new Date(2017, 8, 14)) },
-        { id: 279, date: moment(new Date(2017, 9, 19)) },
-        { id: 280, date: moment(new Date(2017, 10, 23)) },
-        { id: 281, date: moment(new Date(2017, 11, 21)) },
+        { id: 270, date: moment(new Date(2018, 0, 18)) },
+        { id: 271, date: moment(new Date(2018, 1, 15)) },
+        { id: 272, date: moment(new Date(2018, 2, 15)) },
+        { id: 273, date: moment(new Date(2018, 3, 12)) },
+        { id: 274, date: moment(new Date(2018, 4, 17)) },
+        { id: 275, date: moment(new Date(2018, 5, 7)) },
+        { id: 276, date: moment(new Date(2018, 6, 19)) },
+        { id: 277, date: moment(new Date(2018, 7, 16)) },
+        { id: 278, date: moment(new Date(2018, 8, 20)) },
+        { id: 279, date: moment(new Date(2018, 9, 25)) },
+        { id: 280, date: moment(new Date(2018, 10, 29)) },
+        { id: 281, date: moment(new Date(2018, 11, 20)) },
     ];
 
     // global functions - just reference as 'func1()' etc.
