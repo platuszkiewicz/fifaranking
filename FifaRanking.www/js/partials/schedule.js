@@ -7,12 +7,12 @@
         { id: 285, date: moment(new Date(2018, 3, 12)) },
         { id: 286, date: moment(new Date(2018, 4, 17)) },
         { id: 287, date: moment(new Date(2018, 5, 7)) },
-        { id: 288, date: moment(new Date(2018, 6, 19)) },
-        { id: 289, date: moment(new Date(2018, 7, 16)) },
-        { id: 290, date: moment(new Date(2018, 8, 20)) },
-        { id: 291, date: moment(new Date(2018, 9, 25)) },
-        { id: 292, date: moment(new Date(2018, 10, 29)) },
-        { id: 293, date: moment(new Date(2018, 11, 20)) },
+        //{ id: 288, date: moment(new Date(2018, 6, 19)) },
+        { id: 288, date: moment(new Date(2018, 7, 16)) },
+        { id: 289, date: moment(new Date(2018, 8, 20)) },
+        { id: 290, date: moment(new Date(2018, 9, 25)) },
+        { id: 291, date: moment(new Date(2018, 10, 29)) },
+        { id: 292, date: moment(new Date(2018, 11, 20)) },
     ];
 
     // global functions - just reference as 'func1()' etc.
