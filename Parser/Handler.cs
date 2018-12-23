@@ -114,7 +114,7 @@ namespace Parser
             return latestRanking;
         }
 
-        private Ranking GetRankingById(int id)
+        private Ranking GetRankingById(int id) // przestarzałe
         {
             // prepare document
             Ranking latestRanking = new Ranking();
@@ -162,6 +162,84 @@ namespace Parser
                     team.PreviousPoints = Int32.Parse(row.SelectNodes(".//td[@class='tbl-prevpoints']").SingleOrDefault<HtmlNode>().InnerText);
                     team.MovePosition = Int32.Parse(row.SelectNodes(".//td[@class='tbl-prevrank']").SingleOrDefault<HtmlNode>().InnerText);
                     team.FlagUrl = "http:" + (row.SelectNodes(".//td[@class='tbl-teamname']").SingleOrDefault<HtmlNode>().FirstChild.FirstChild.Attributes[2].Value);
+                    latestRanking.PutTeam(team);
+                }
+            }
+            return latestRanking;
+        }
+
+        private Ranking GetRankingBySiteId(int siteId, int id) 
+        {
+            // prepare document
+            Ranking latestRanking = new Ranking();
+            latestRanking.Id = id;
+            WebClient client = new WebClient();
+            client.Encoding = Encoding.UTF8;
+            var htmlData = client.DownloadData("http://www.fifa.com/fifa-world-ranking/ranking-table/men/rank/id" + siteId + "/");
+            var htmlCode = Encoding.UTF8.GetString(htmlData);
+
+            // (1) encode hak
+            htmlCode = htmlCode.Replace("&#244;", "ô"); // Côte d'Ivoire
+            htmlCode = htmlCode.Replace("&#39;", "'");  // Côte d'Ivoire
+            htmlCode = htmlCode.Replace("&#231;", "ç"); // Curaçao
+
+            // (2) St. Vincent / Grenadines hak: Windows nie dopuszcza znaku "/" w nazwach plikow
+            htmlCode = htmlCode.Replace("St. Vincent / Grenadines", "St Vincent and the Grenadines");
+
+            // (3) na stronie "São Tomé e Príncipe" zamieniono w pewnym momencie na "Sao Tome e Principe"
+            htmlCode = htmlCode.Replace("Sao Tome e Principe", "São Tomé e Príncipe");
+
+            var html = new HtmlDocument();
+            html.LoadHtml(htmlCode);
+
+            // get date
+            try
+            {
+                var dateHtml = html.DocumentNode.SelectNodes("//div[@class='fi-selected-item']");
+                if (dateHtml == null && id == 1) // ranking o id = 1 nie ma daty na stronie FIFA
+                {
+                    latestRanking.Date = new DateTime(1992, 12, 1); // przyjmuje się datę 1 grudnia 1992
+                }
+                else
+                {
+                    var dateString = dateHtml.SingleOrDefault<HtmlNode>().InnerText;
+                    string[] dateTable = dateString.Split(' ');
+                    latestRanking.Date = new DateTime(Int32.Parse(dateTable[2]), DateTime.ParseExact(dateTable[1], "MMMM", CultureInfo.InvariantCulture).Month, Int32.Parse(dateTable[0]));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("[GetRankingById] Problem z odczytem rankingu o id=" + id.ToString() + " ze strony FIFA", ex);
+
+            }
+
+            // get team data
+            foreach (HtmlNode table in html.DocumentNode.SelectNodes("//tbody"))
+            {
+                foreach (HtmlNode row in table.SelectNodes("tr"))
+                {
+                    var team = new TeamInRank();
+                    var test = row.SelectNodes(".//td[contains(@class,'fi-table__rank')]");
+                    team.Rank = Int32.Parse(row.SelectNodes(".//td[contains(@class,'fi-table__rank')]").FirstOrDefault<HtmlNode>().InnerText);
+
+                    var name = (row.SelectNodes(".//td[contains(@class,'fi-table__teamname')]//span[contains(@class,'fi-t__nText ')]").
+                        FirstOrDefault<HtmlNode>().InnerText);
+                    byte[] bytes = Encoding.Unicode.GetBytes(name);
+                    team.Name = Encoding.Unicode.GetString(bytes);
+
+                    if(team.Name == "C&#244;te d&#39;Ivoire") // hak zwiazany z błedem dekodowania w htmlAgilityPack
+                    {
+                        team.Name = "Côte d'Ivoire";
+                    }
+
+                    team.TotalPoints = Int32.Parse(row.SelectNodes(".//td[contains(@class,'fi-table__points')]//span[contains(@class,'text')]").
+                        FirstOrDefault<HtmlNode>().InnerText);
+                    team.PreviousPoints = Int32.Parse(row.SelectNodes(".//td[contains(@class,'fi-table__prevpoints')]//span[contains(@class,'text')]").
+                        FirstOrDefault<HtmlNode>().InnerText);
+                    team.MovePosition = Int32.Parse(row.SelectNodes(".//td[contains(@class,'fi-table__rankingmovement')]//span[contains(@class,'text')]").
+                        FirstOrDefault<HtmlNode>().InnerText);
+                    team.FlagUrl = (row.SelectNodes(".//td[contains(@class,'fi-table__teamname')]//*//img[contains(@class,'fi-flag--4')]").
+                        FirstOrDefault<HtmlNode>().Attributes.FirstOrDefault().Value);
                     latestRanking.PutTeam(team);
                 }
             }
@@ -280,16 +358,21 @@ namespace Parser
             // wyznacz ostatnie Id
             string path = AppDomain.CurrentDomain.BaseDirectory;
             int lastIdInFiles = -1;
+            DateTime lastDateInFiles = new DateTime(1992,12,1);
+
             using (StreamReader r = new StreamReader(path + "data/rankings/_rankingsList.json"))
             {
                 string json = r.ReadToEnd();
                 List<RankingInList> items = JsonConvert.DeserializeObject<List<RankingInList>>(json);
                 lastIdInFiles = items.LastOrDefault().Id;
+                lastDateInFiles = items.LastOrDefault().Date;
             }
+
+            var nextSiteId = GetNextSiteId(lastDateInFiles);
 
             try
             {
-                Ranking lastRanking = GetRankingById(lastIdInFiles+1);
+                Ranking lastRanking = GetRankingBySiteId(nextSiteId, lastIdInFiles + 1);
 
                 // ######################### dopisz do _rankingsList
                 // #########################
@@ -308,7 +391,7 @@ namespace Parser
                 // #########################
                 string json2 = JsonConvert.SerializeObject(lastRanking);
                 var rankingForList = new RankingInList() { Id = lastRanking.Id, Date = lastRanking.Date };
-                System.IO.File.WriteAllText(path + "data/rankings/" + (lastIdInFiles+1) + ".json", json2);
+                System.IO.File.WriteAllText(path + "data/rankings/" + (lastIdInFiles + 1) + ".json", json2);
 
                 // ######################### dopisz do każdej drużyny najnowszy ranking. Sprowadza się to do CreateTeamFiles() tyle że bez pętli
                 // #########################
@@ -342,10 +425,10 @@ namespace Parser
                         initialList.Add(teamInFile);
                         string json = JsonConvert.SerializeObject(initialList, Newtonsoft.Json.Formatting.Indented);
 
-                        System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name + ".json", json);
+                        System.IO.File.WriteAllText(path + "/data/teams/" + teamInRank.Name.Replace("/","&") + ".json", json);
 
                         using (var client = new WebClient()) {
-                            client.DownloadFile(teamInRank.FlagUrl, path + "data/flags/" + teamInRank.Name + ".png");
+                            client.DownloadFile(teamInRank.FlagUrl, path + "data/flags/" + teamInRank.Name.Replace("/", "&") + ".png");
                         }
                     }
                 }
@@ -385,6 +468,41 @@ namespace Parser
             foreach (FileInfo file in dirFlags.GetFiles()) {
                 file.Delete();
             }
+        }
+
+        private int GetNextSiteId(DateTime date) // pobiera NASTĘPNE siteId na podstawie daty
+        {
+            WebClient client = new WebClient();
+            string downloadString = client.DownloadString("http://www.fifa.com/fifa-world-ranking/ranking-table/men/");
+            var html = new HtmlDocument();
+            html.LoadHtml(downloadString);
+
+            // get list
+            var siteList = html.DocumentNode.SelectNodes("//ul[@class='fi-ranking-schedule__nav dropdown-menu']").SingleOrDefault<HtmlNode>();
+            int nextSiteId = -1;
+            int prevSiteId = -1;
+
+            foreach (HtmlNode element in siteList.SelectNodes("li"))
+            {
+                // date form site list
+                var dateString = element.SelectNodes("a").SingleOrDefault<HtmlNode>().InnerText;
+                DateTime _date = DateTime.ParseExact(dateString, "d MMMM yyyy",CultureInfo.InvariantCulture);
+
+                if (date == _date)
+                {
+                    nextSiteId = prevSiteId;
+                    break;
+                }
+
+                // siteId from site list
+                var link = element.SelectNodes("a").SingleOrDefault<HtmlNode>().Attributes.FirstOrDefault().Value;
+                var siteString = link.Split('/')[5];
+                int siteId = Int32.Parse(siteString.Replace("id", ""));
+
+                prevSiteId = siteId;
+            }
+
+            return nextSiteId;
         }
 
         #endregion Private Methods
