@@ -2190,5 +2190,37 @@
     "MovePosition": 6,
     "Date": "2017-10-16T00:00:00",
     "RankId": 279
+  },
+  {
+    "Rank": 134,
+    "TotalPoints": 1109.0,
+    "PreviousPoints": 1104,
+    "MovePosition": 1,
+    "Date": "2018-09-20T00:00:00",
+    "RankId": 289
+  },
+  {
+    "Rank": 133,
+    "TotalPoints": 1109.0,
+    "PreviousPoints": 1109,
+    "MovePosition": 1,
+    "Date": "2018-10-25T00:00:00",
+    "RankId": 290
+  },
+  {
+    "Rank": 136,
+    "TotalPoints": 1105.0,
+    "PreviousPoints": 1109,
+    "MovePosition": -3,
+    "Date": "2018-11-29T00:00:00",
+    "RankId": 291
+  },
+  {
+    "Rank": 136,
+    "TotalPoints": 1105.0,
+    "PreviousPoints": 1105,
+    "MovePosition": 0,
+    "Date": "2018-12-20T00:00:00",
+    "RankId": 292
   }
 ]
