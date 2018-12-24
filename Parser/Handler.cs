@@ -33,7 +33,7 @@ namespace Parser
                 object result = null;
                 switch (action)
                 {
-                    case "recalculateAll":
+                    case "recalculateAll": // nie zadziała odpowiednio po zmianach na stronie FIFA
                         DeleteFiles();
                         CreateRankingFiles();
                         CreateTeamFiles();
