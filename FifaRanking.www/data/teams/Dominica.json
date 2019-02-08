@@ -2198,5 +2198,13 @@
     "MovePosition": -1,
     "Date": "2018-12-20T00:00:00",
     "RankId": 292
+  },
+  {
+    "Rank": 178,
+    "TotalPoints": 950.0,
+    "PreviousPoints": 950,
+    "MovePosition": 0,
+    "Date": "2019-02-07T00:00:00",
+    "RankId": 293
   }
 ]
