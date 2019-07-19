@@ -4,7 +4,7 @@
         { id: 293, date: moment(new Date(2019, 1, 7)) },
         { id: 294, date: moment(new Date(2019, 3, 4)) },
         { id: 295, date: moment(new Date(2019, 5, 14)) },
-        { id: 296, date: moment(new Date(2019, 6, 18)) },
+        { id: 296, date: moment(new Date(2019, 6, 25)) },
         { id: 298, date: moment(new Date(2019, 8, 19)) },
         { id: 299, date: moment(new Date(2019, 9, 24)) },
         { id: 300, date: moment(new Date(2019, 10, 28)) },
