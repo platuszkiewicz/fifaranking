@@ -1,14 +1,14 @@
 ﻿var Schedule = (function () {
     // global variables - just reference as 'globalVariable_1' etc.
     var DATA = [
-        { id: 293, date: moment(new Date(2019, 1, 7)) },
-        { id: 294, date: moment(new Date(2019, 3, 4)) },
-        { id: 295, date: moment(new Date(2019, 5, 14)) },
-        { id: 296, date: moment(new Date(2019, 6, 25)) },
-        { id: 298, date: moment(new Date(2019, 8, 19)) },
-        { id: 299, date: moment(new Date(2019, 9, 24)) },
-        { id: 300, date: moment(new Date(2019, 10, 28)) },
-        { id: 301, date: moment(new Date(2019, 11, 19)) },
+        { id: 301, date: moment(new Date(2020, 1, 20)) }, // 0 - January, 1 - February...
+        { id: 302, date: moment(new Date(2020, 3, 9)) },
+        { id: 303, date: moment(new Date(2020, 5, 11)) },
+        { id: 304, date: moment(new Date(2020, 6, 16)) },
+        { id: 305, date: moment(new Date(2020, 8, 17)) },
+        { id: 306, date: moment(new Date(2020, 9, 22)) },
+        { id: 307, date: moment(new Date(2020, 10, 26)) },
+        { id: 308, date: moment(new Date(2020, 11, 10)) },
     ];
 
     // global functions - just reference as 'func1()' etc.
