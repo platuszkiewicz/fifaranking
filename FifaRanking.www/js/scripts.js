@@ -87,12 +87,13 @@ function adjustSVG(partial) {
 }
 
 function removeAds() {
-    while ($("body").children().length != 2) {
+    // only for somee.com hosting
+    /*while ($("body").children().length != 2) {
         $("body").children()[$("body").children().length - 1].remove();
     }
     $.each($('center'), function (name, val) {
         $(val).remove();
-    });
+    });*/
 }
 
 function mobileCheck() {
