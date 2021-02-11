@@ -2070,5 +2070,21 @@
     "MovePosition": 0,
     "Date": "2019-02-07T00:00:00",
     "RankId": 293
+  },
+  {
+    "Rank": 190,
+    "TotalPoints": 908.0,
+    "PreviousPoints": 908,
+    "MovePosition": 0,
+    "Date": "2019-06-14T00:00:00",
+    "RankId": 295
+  },
+  {
+    "Rank": 190,
+    "TotalPoints": 908.0,
+    "PreviousPoints": 908,
+    "MovePosition": 0,
+    "Date": "2019-07-25T00:00:00",
+    "RankId": 296
   }
 ]

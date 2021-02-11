@@ -2342,5 +2342,125 @@
     "MovePosition": -1,
     "Date": "2019-02-07T00:00:00",
     "RankId": 293
+  },
+  {
+    "Rank": 105,
+    "TotalPoints": 1207.0,
+    "PreviousPoints": 1207,
+    "MovePosition": 0,
+    "Date": "2019-06-14T00:00:00",
+    "RankId": 295
+  },
+  {
+    "Rank": 105,
+    "TotalPoints": 1207.0,
+    "PreviousPoints": 1207,
+    "MovePosition": 0,
+    "Date": "2019-07-25T00:00:00",
+    "RankId": 296
+  },
+  {
+    "Rank": 102,
+    "TotalPoints": 1212.0,
+    "PreviousPoints": 1207,
+    "MovePosition": 3,
+    "Date": "2019-09-19T00:00:00",
+    "RankId": 297
+  },
+  {
+    "Rank": 103,
+    "TotalPoints": 1211.0,
+    "PreviousPoints": 1212,
+    "MovePosition": -1,
+    "Date": "2019-10-24T00:00:00",
+    "RankId": 298
+  },
+  {
+    "Rank": 101,
+    "TotalPoints": 1215.0,
+    "PreviousPoints": 1211,
+    "MovePosition": 2,
+    "Date": "2019-11-28T00:00:00",
+    "RankId": 299
+  },
+  {
+    "Rank": 101,
+    "TotalPoints": 1215.0,
+    "PreviousPoints": 1215,
+    "MovePosition": 0,
+    "Date": "2019-12-19T00:00:00",
+    "RankId": 300
+  },
+  {
+    "Rank": 101,
+    "TotalPoints": 1215.0,
+    "PreviousPoints": 1215,
+    "MovePosition": 0,
+    "Date": "2020-02-20T00:00:00",
+    "RankId": 301
+  },
+  {
+    "Rank": 101,
+    "TotalPoints": 1215.0,
+    "PreviousPoints": 1215,
+    "MovePosition": 0,
+    "Date": "2020-04-09T00:00:00",
+    "RankId": 302
+  },
+  {
+    "Rank": 101,
+    "TotalPoints": 1215.0,
+    "PreviousPoints": 1215,
+    "MovePosition": 0,
+    "Date": "2020-06-11T00:00:00",
+    "RankId": 303
+  },
+  {
+    "Rank": 101,
+    "TotalPoints": 1215.0,
+    "PreviousPoints": 1215,
+    "MovePosition": 0,
+    "Date": "2020-07-16T00:00:00",
+    "RankId": 304
+  },
+  {
+    "Rank": 101,
+    "TotalPoints": 1215.0,
+    "PreviousPoints": 1215,
+    "MovePosition": 0,
+    "Date": "2020-09-17T00:00:00",
+    "RankId": 305
+  },
+  {
+    "Rank": 102,
+    "TotalPoints": 1209.0,
+    "PreviousPoints": 1215,
+    "MovePosition": -1,
+    "Date": "2020-10-22T00:00:00",
+    "RankId": 306
+  },
+  {
+    "Rank": 111,
+    "TotalPoints": 1178.0,
+    "PreviousPoints": 1209,
+    "MovePosition": -9,
+    "Date": "2020-11-26T00:00:00",
+    "RankId": 307
+  },
+  {
+    "Rank": 111,
+    "TotalPoints": 1178.0,
+    "PreviousPoints": 1178,
+    "MovePosition": 0,
+    "Date": "2020-12-10T00:00:00",
+    "RankId": 308
+  },
+  {
+    "Rank": 111,
+    "TotalPoints": 1178.0,
+    "PreviousPoints": 1178,
+    "MovePosition": 0,
+    "Date": "2020-12-10T00:00:00",
+    "RankId": 308
   }
 ]
