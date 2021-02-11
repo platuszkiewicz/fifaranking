@@ -232,6 +232,11 @@ namespace Parser
                         team.Name = "Côte d'Ivoire";
                     }
 
+                    if (team.Name == "S&#227;o Tom&#233; and Pr&#237;ncipe") // hak zwiazany z błedem dekodowania w htmlAgilityPack
+                    {
+                        team.Name = "São Tomé e Príncipe";
+                    }
+
                     team.TotalPoints = Int32.Parse(row.SelectNodes(".//td[contains(@class,'fi-table__points')]//span[contains(@class,'text')]").
                         FirstOrDefault<HtmlNode>().InnerText);
                     team.PreviousPoints = Int32.Parse(row.SelectNodes(".//td[contains(@class,'fi-table__prevpoints')]//span[contains(@class,'text')]").
