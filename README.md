@@ -1,1 +1,1 @@
-DEMO: [fifaranking.somee.com](http://fifaranking.somee.com)
+DEMO: [https://platuszkiewicz.github.io/fifaranking/#](https://platuszkiewicz.github.io/fifaranking/#)
