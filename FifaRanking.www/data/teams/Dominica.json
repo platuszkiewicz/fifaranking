@@ -2208,6 +2208,14 @@
     "RankId": 293
   },
   {
+    "Rank": 178,
+    "TotalPoints": 954.0,
+    "PreviousPoints": 950,
+    "MovePosition": 0,
+    "Date": "2019-04-04T00:00:00",
+    "RankId": 294
+  },
+  {
     "Rank": 177,
     "TotalPoints": 954.0,
     "PreviousPoints": 954,
@@ -2310,14 +2318,6 @@
     "MovePosition": 0,
     "Date": "2020-11-26T00:00:00",
     "RankId": 307
-  },
-  {
-    "Rank": 184,
-    "TotalPoints": 919.0,
-    "PreviousPoints": 919,
-    "MovePosition": 1,
-    "Date": "2020-12-10T00:00:00",
-    "RankId": 308
   },
   {
     "Rank": 184,
