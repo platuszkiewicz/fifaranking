@@ -63,6 +63,7 @@ var List = (function () {
                 LIST_PARAMS.isLastId = LIST_PARAMS.lastId == LIST_PARAMS.id ? true : false;
                 reloadTable($(this).val());
                 $(this).blur();
+                disableToggleOnLast();
             });
 
             callbackOnlyOnInit();
