@@ -2,7 +2,7 @@
   {
     "Rank": 32,
     "TotalPoints": 797.79,
-    "PreviousPoints": 798,
+    "PreviousPoints": 798.0,
     "MovePosition": 0,
     "Date": "2017-12-21T00:00:00",
     "RankId": 281
@@ -10,7 +10,7 @@
   {
     "Rank": 34,
     "TotalPoints": 797.36,
-    "PreviousPoints": 798,
+    "PreviousPoints": 798.0,
     "MovePosition": -2,
     "Date": "2018-01-18T00:00:00",
     "RankId": 282
@@ -18,7 +18,7 @@
   {
     "Rank": 33,
     "TotalPoints": 790.27,
-    "PreviousPoints": 797,
+    "PreviousPoints": 797.0,
     "MovePosition": 1,
     "Date": "2018-02-15T00:00:00",
     "RankId": 283
@@ -26,7 +26,7 @@
   {
     "Rank": 33,
     "TotalPoints": 791.89,
-    "PreviousPoints": 790,
+    "PreviousPoints": 790.0,
     "MovePosition": 0,
     "Date": "2018-03-15T00:00:00",
     "RankId": 284
@@ -34,7 +34,7 @@
   {
     "Rank": 36,
     "TotalPoints": 726.92,
-    "PreviousPoints": 792,
+    "PreviousPoints": 792.0,
     "MovePosition": -3,
     "Date": "2018-04-12T00:00:00",
     "RankId": 285
@@ -42,7 +42,7 @@
   {
     "Rank": 36,
     "TotalPoints": 726.92,
-    "PreviousPoints": 727,
+    "PreviousPoints": 727.0,
     "MovePosition": 0,
     "Date": "2018-05-17T00:00:00",
     "RankId": 286
@@ -50,7 +50,7 @@
   {
     "Rank": 37,
     "TotalPoints": 708.35,
-    "PreviousPoints": 727,
+    "PreviousPoints": 727.0,
     "MovePosition": -1,
     "Date": "2018-06-07T00:00:00",
     "RankId": 287
@@ -58,7 +58,7 @@
   {
     "Rank": 32,
     "TotalPoints": 1471.19,
-    "PreviousPoints": 708,
+    "PreviousPoints": 708.0,
     "MovePosition": 5,
     "Date": "2018-08-16T00:00:00",
     "RankId": 288
@@ -66,7 +66,7 @@
   {
     "Rank": 33,
     "TotalPoints": 1474.0,
-    "PreviousPoints": 1471,
+    "PreviousPoints": 1471.0,
     "MovePosition": -1,
     "Date": "2018-09-20T00:00:00",
     "RankId": 289
@@ -74,7 +74,7 @@
   {
     "Rank": 30,
     "TotalPoints": 1478.0,
-    "PreviousPoints": 1474,
+    "PreviousPoints": 1474.0,
     "MovePosition": 3,
     "Date": "2018-10-25T00:00:00",
     "RankId": 290
@@ -82,7 +82,7 @@
   {
     "Rank": 29,
     "TotalPoints": 1481.0,
-    "PreviousPoints": 1478,
+    "PreviousPoints": 1478.0,
     "MovePosition": 1,
     "Date": "2018-11-29T00:00:00",
     "RankId": 291
@@ -90,7 +90,7 @@
   {
     "Rank": 29,
     "TotalPoints": 1481.0,
-    "PreviousPoints": 1481,
+    "PreviousPoints": 1481.0,
     "MovePosition": 0,
     "Date": "2018-12-20T00:00:00",
     "RankId": 292
@@ -98,7 +98,7 @@
   {
     "Rank": 22,
     "TotalPoints": 1516.0,
-    "PreviousPoints": 1481,
+    "PreviousPoints": 1481.0,
     "MovePosition": 7,
     "Date": "2019-02-07T00:00:00",
     "RankId": 293
@@ -106,7 +106,7 @@
   {
     "Rank": 21,
     "TotalPoints": 1516.0,
-    "PreviousPoints": 1516,
+    "PreviousPoints": 1516.0,
     "MovePosition": 1,
     "Date": "2019-04-04T00:00:00",
     "RankId": 294
@@ -114,7 +114,7 @@
   {
     "Rank": 20,
     "TotalPoints": 1518.0,
-    "PreviousPoints": 1516,
+    "PreviousPoints": 1516.0,
     "MovePosition": 1,
     "Date": "2019-06-14T00:00:00",
     "RankId": 295
@@ -122,7 +122,7 @@
   {
     "Rank": 23,
     "TotalPoints": 1518.0,
-    "PreviousPoints": 1518,
+    "PreviousPoints": 1518.0,
     "MovePosition": -3,
     "Date": "2019-07-25T00:00:00",
     "RankId": 296
@@ -130,7 +130,7 @@
   {
     "Rank": 23,
     "TotalPoints": 1522.0,
-    "PreviousPoints": 1518,
+    "PreviousPoints": 1518.0,
     "MovePosition": 0,
     "Date": "2019-09-19T00:00:00",
     "RankId": 297
@@ -138,7 +138,7 @@
   {
     "Rank": 27,
     "TotalPoints": 1505.0,
-    "PreviousPoints": 1522,
+    "PreviousPoints": 1522.0,
     "MovePosition": -4,
     "Date": "2019-10-24T00:00:00",
     "RankId": 298
@@ -146,7 +146,7 @@
   {
     "Rank": 33,
     "TotalPoints": 1489.0,
-    "PreviousPoints": 1505,
+    "PreviousPoints": 1505.0,
     "MovePosition": -6,
     "Date": "2019-11-28T00:00:00",
     "RankId": 299
@@ -154,7 +154,7 @@
   {
     "Rank": 33,
     "TotalPoints": 1489.0,
-    "PreviousPoints": 1489,
+    "PreviousPoints": 1489.0,
     "MovePosition": 0,
     "Date": "2019-12-19T00:00:00",
     "RankId": 300
@@ -162,7 +162,7 @@
   {
     "Rank": 33,
     "TotalPoints": 1489.0,
-    "PreviousPoints": 1489,
+    "PreviousPoints": 1489.0,
     "MovePosition": 0,
     "Date": "2020-02-20T00:00:00",
     "RankId": 301
@@ -170,7 +170,7 @@
   {
     "Rank": 33,
     "TotalPoints": 1489.0,
-    "PreviousPoints": 1489,
+    "PreviousPoints": 1489.0,
     "MovePosition": 0,
     "Date": "2020-04-09T00:00:00",
     "RankId": 302
@@ -178,7 +178,7 @@
   {
     "Rank": 33,
     "TotalPoints": 1489.0,
-    "PreviousPoints": 1489,
+    "PreviousPoints": 1489.0,
     "MovePosition": 0,
     "Date": "2020-06-11T00:00:00",
     "RankId": 303
@@ -186,7 +186,7 @@
   {
     "Rank": 33,
     "TotalPoints": 1489.0,
-    "PreviousPoints": 1489,
+    "PreviousPoints": 1489.0,
     "MovePosition": 0,
     "Date": "2020-07-16T00:00:00",
     "RankId": 304
@@ -194,7 +194,7 @@
   {
     "Rank": 30,
     "TotalPoints": 1489.0,
-    "PreviousPoints": 1489,
+    "PreviousPoints": 1489.0,
     "MovePosition": 3,
     "Date": "2020-09-17T00:00:00",
     "RankId": 305
@@ -202,7 +202,7 @@
   {
     "Rank": 29,
     "TotalPoints": 1492.0,
-    "PreviousPoints": 1489,
+    "PreviousPoints": 1489.0,
     "MovePosition": 1,
     "Date": "2020-10-22T00:00:00",
     "RankId": 306
@@ -210,7 +210,7 @@
   {
     "Rank": 29,
     "TotalPoints": 1496.0,
-    "PreviousPoints": 1492,
+    "PreviousPoints": 1492.0,
     "MovePosition": 0,
     "Date": "2020-11-26T00:00:00",
     "RankId": 307
@@ -218,9 +218,25 @@
   {
     "Rank": 29,
     "TotalPoints": 1496.0,
-    "PreviousPoints": 1496,
+    "PreviousPoints": 1496.0,
     "MovePosition": 0,
     "Date": "2020-12-10T00:00:00",
     "RankId": 308
+  },
+  {
+    "Rank": 29,
+    "TotalPoints": 1496.0,
+    "PreviousPoints": 1496.0,
+    "MovePosition": 0,
+    "Date": "2021-02-18T00:00:00",
+    "RankId": 309
+  },
+  {
+    "Rank": 31,
+    "TotalPoints": 1499.52,
+    "PreviousPoints": 1496.0,
+    "MovePosition": -2,
+    "Date": "2021-04-07T00:00:00",
+    "RankId": 310
   }
 ]
