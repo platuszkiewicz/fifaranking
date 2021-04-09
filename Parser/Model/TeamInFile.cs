@@ -6,7 +6,7 @@ namespace Parser.Model
     {
         public int Rank { get; set; }
         public double TotalPoints { get; set; }
-        public int PreviousPoints { get; set; }
+        public double PreviousPoints { get; set; }
         public int MovePosition { get; set; }
 
         public DateTime Date { get; set; }

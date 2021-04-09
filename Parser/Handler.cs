@@ -237,10 +237,10 @@ namespace Parser
                         team.Name = "São Tomé e Príncipe";
                     }
 
-                    team.TotalPoints = Int32.Parse(row.SelectNodes(".//td[contains(@class,'fi-table__points')]//span[contains(@class,'text')]").
-                        FirstOrDefault<HtmlNode>().InnerText);
-                    team.PreviousPoints = Int32.Parse(row.SelectNodes(".//td[contains(@class,'fi-table__prevpoints')]//span[contains(@class,'text')]").
-                        FirstOrDefault<HtmlNode>().InnerText);
+                    team.TotalPoints = Double.Parse(row.SelectNodes(".//td[contains(@class,'fi-table__points')]//span[contains(@class,'text')]").
+                        FirstOrDefault<HtmlNode>().InnerText, CultureInfo.InvariantCulture);
+                    team.PreviousPoints = Double.Parse(row.SelectNodes(".//td[contains(@class,'fi-table__prevpoints')]//span[contains(@class,'text')]").
+                        FirstOrDefault<HtmlNode>().InnerText, CultureInfo.InvariantCulture);
                     team.MovePosition = Int32.Parse(row.SelectNodes(".//td[contains(@class,'fi-table__rankingmovement')]//span[contains(@class,'text')]").
                         FirstOrDefault<HtmlNode>().InnerText);
                     team.FlagUrl = (row.SelectNodes(".//td[contains(@class,'fi-table__teamname')]//*//img[contains(@class,'fi-flag--4')]").
